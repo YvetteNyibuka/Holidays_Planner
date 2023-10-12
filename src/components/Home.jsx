@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import NextButton from './buttons/NextButton';
 import PrevButton from './buttons/PrevButton';
-import yvette from '../assets/yvette.jpg';
-import nyibuka from '../assets/nyibuka.jpg';
-import izanyi from '../assets/izanyi.jpg';
+import yvette from "../../public/images/yvette.jpg"
+import izanyi from "../../public/images/izanyi.jpg"
+import nyibuka from "../../public/images/nyibuka.jpg"
 
 const Home = () => {
   const backgrounds = [

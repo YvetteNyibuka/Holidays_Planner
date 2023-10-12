@@ -1,15 +1,39 @@
-import React from 'react'
+import React from "react";
+import { MdEmail } from "react-icons/md";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { FaFacebookF } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
 
-const NabBar1 = () => {
+const Header1 = () => {
   return (
-    <div className='nav1'>
-        <div className='nav1__links'>
-            <a href='#'>About us</a>
-            <a href='#'>Career</a>
-            <a href='#'>Departments</a>
+    <div className="header1">
+      <div className="social_medias">
+        <div  className="part1">
+          <div className="email" id="social">
+            <MdEmail className="iconSocial" />
+            <p>izanyibukayvette@gmail.com</p>
+          </div>
+          <div className="phone" id="social">
+            <BsFillTelephoneFill className="iconSocial" />
+            <p>(+250)-787615313</p>
+          </div>
         </div>
+        <div  className="part2">
+        <div className="facebook" id="social">
+          <FaFacebookF className="iconSocial" />
+        </div>
+        <div className="instagram" id="social">
+          <FaInstagram className="iconSocial" />
+        </div>
+        <div className="twitter" id="social">
+          <FaTwitter className="iconSocial" />
+        </div>
+        </div>
+      </div>
+    
     </div>
-  )
-}
+  );
+};
 
-export default NabBar1
+export default Header1;

@@ -1,9 +1,11 @@
 import React from 'react'
 
-const OthePages = () => {
+const OtherPages = () => {
   return (
+    <>
     <div className='otherPages'>OthePages</div>
+    </>
   )
 }
 
-export default OthePages
+export default OtherPages

@@ -1,3 +1,4 @@
+
 .App {
   display: flex;
   justify-content: center;
@@ -10,71 +11,193 @@
   flex-direction: column;
 }
 
+
+
 body{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   width: 100vw;
 }
-.nav1 {
+.header1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  text-align: center;
+  margin: auto;
+  background-color: #2B2B2B;
   color: white;
-  padding: 3rem;
+  padding: 0;
+  height: 7rem;
   position: fixed;
   width: 100vw;
   top: 0;
-  z-index: 1;
+  z-index: 0;
 }
-
-/* ... */
 
 .nav2 {
   display: flex;
+  margin: auto;
   justify-content: space-between;
   align-items: center;
-  background-color: #7f1313;
+  background-color: white;
   color: white;
-  padding: 3rem;
-  position: absolute;
-  width: 78%;
-  top: 7rem;
-  transition: all 0.6s; /* Add a transition for smooth animation */
+  padding: 1.5rem 0.5rem;
+  position: sticky;
+  width: 82%;
+  top: 5rem;
+  height: 4rem;
+  transition: all 0.6s; 
 }
 
 .nav2.fixed {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #7f1313;
+  background-color: white;
   color: white;
-  padding: 3rem;
+  padding: 1.5rem;
   position: fixed;
   width: 100vw;
   top: 0;
   z-index: 2;
-  transition: all 0.6s; /* Add the same transition */
+  transition: all 0.6s; 
+}
+
+#nav2{
+  display: flex;
+}
+.logo{
+  width: 60%;
+}
+.search{
+  width: 3rem;
+  margin: auto;justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 3rem;
+  margin: 0 1.5rem;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+.menu{
+  width: fit-content;
+  margin: auto;justify-content: center;
+  align-items: center;
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+  border-radius: 100%;
+  background-color: #c29d59;
+}
+
+.reserve{
+  width: fit-content;
+}
+.reserveBtn{
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  background-color: #C29D59;
+  border-radius: .5rem;
+  color: white;
+  border: none;
 }
 
 
-.nav1__links {
+.part3{
+  margin: auto;
+  justify-content: space-between;
+  margin-right: 3rem;
+  align-items: center;
+  text-align: center;
+  width: 40%;
+  gap: 0;
   display: flex;
+  float: right;
+}
+
+
+
+.iconSocial{
+color: #C29D59;
+font-size: 1.5rem;
+margin-right: .5rem;
+}
+
+#social{
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+#social:hover{
+  background-color: #FFFFFF;
+  color: #000000;
+}
+#social:hover .iconSocial,
+#social:hover p {
+  color: black;
+}
+.email{
+  width: 50%;
+  display: flex;
+  border-right: 1px solid white;
+}
+.phone{
+  width: 50%;
+}
+  
+.facebook{
+  border-right: 1px solid white;
+  width: 15%;
+  border-right: 1px solid white;
+}
+.instagram{
+  border-right: 1px solid white;
+  width: 15%;
+}
+.twitter{
+  border-right: 1px solid white;
+  width: 15%;
+}
+
+.social_medias{
+  padding: 0 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 30vw;
+  height: 100%;
+  width: 87.7vw;
   margin-right: 10px;
  
 }
-a{ color:white;
-  text-decoration: none;}
+
+.part1{
+  padding-left: 4rem;
+  width: 50%;
+  height: 100%;
+  display: flex;
+}
+.part2{
+  height: 100%;
+  padding-left: 0rem;
+  width: 30%;
+  justify-content: flex-end;
+  display: flex;
+}
 
 
   .home_cont{
     display: flex;
     justify-content: center;
     align-items: center;
+    top: -6;
     height: 100vh;
     width: 100vw;
     background-color: cadetblue;

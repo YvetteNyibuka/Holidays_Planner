@@ -1,0 +1,102 @@
+.loginContt {
+    width: 100%;
+    /* background-color: grey; */
+    padding-top: 3rem;
+    height: fit-content;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 3rem;
+}
+
+
+.loginFormm{
+    width: 50%;
+    padding: 2rem;
+    height: fit-content;
+    /* background-color: hotpink; */
+    padding: 0 1rem;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#infosecc{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+#loginFormm{
+    width: 60%;
+    height:fit-content;
+    /* background-color: goldenrod; */
+    padding: 2rem;
+}
+#loginInputt{
+    margin: .5rem 0;
+    padding: 1rem;
+    width: 95%;
+    outline: none;
+    border-radius: 1rem;
+}
+#inputlabell{
+    font-size: 1.3rem;
+}
+.loginBtnn{
+    font-size: 1.5rem;
+    width: 100%;
+    color: white;
+    padding: 1rem 1rem;
+    background-color: #C29D59;
+    border: none;
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
+.secAlternative{
+    width: 80%;
+    height: fit-content;
+    margin: auto;
+    /* background-color: red; */
+    justify-content: space-between;
+    padding: 0 0rem 0 0 ;
+    justify-content: baseline;
+    display: flex;
+    
+}
+
+.googleBtnn{
+    width: 30%;
+    padding: .8rem;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    font-size: 1.3rem;
+    border: 1px solid red;
+    border-radius: .5rem;
+}
+.facebookBtnn{
+    width: 30%;
+    padding: .8rem;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    font-size: 1.3rem;
+    border: 1px solid blue;
+    border-radius: .5rem;
+}
+
+
+
+.loginPicture{
+    height: fit-content;
+    width: 50%;
+    height: 30rem;
+    display: flex;
+    justify-content: space-between;
+}

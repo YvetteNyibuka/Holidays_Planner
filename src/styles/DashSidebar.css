@@ -1,0 +1,78 @@
+
+.dashsharable{
+  display: flex;
+}
+.sidenavCont{
+    height: 100vh;
+    width: 20%;
+    position: fixed;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    border: .5px solid lightgray;
+}
+
+.profile{
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+
+}
+
+.ppicture{
+    width: 30%;
+    height: 100%;
+    border-radius: 100%;
+    border: 1px solid #C29D59;
+}
+.namees{
+    margin-left: 1rem;
+    width: 50%;
+    height: 100%;
+}
+
+.navLinks{
+    height: fit-content;
+    width: fit-content;
+    padding: auto;
+}
+
+#navLinkk {
+    display: flex;
+    width: 12rem;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f0f0f0; 
+    transition: background-color 0.3s ease;
+  }
+  
+  #navLinkk:hover {
+    background-color: #C29D59; 
+  }
+  
+  #navLinkk a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  #a{
+    margin-left: 1rem;
+  }
+
+
+.logout{
+    height: fit-content;
+    width: 96.2%;
+    font-size: 2rem;
+    display: flex;
+    background-color: #C29D59;
+    padding: .3rem;
+}

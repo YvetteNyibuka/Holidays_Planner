@@ -1,0 +1,42 @@
+.dashHeadercont{
+     width: 80%;
+     margin-left: 20%;
+     height: 3rem;
+     display: flex;
+     color: #666666;
+     background-color: red;
+     margin-top: .5rem;
+}
+
+.greetUser{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-right: #666666 1px solid;
+}
+
+ .helllo{
+     width:30%;
+
+}
+ .settings{
+    margin-top: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    width:10%;
+
+}
+
+.displayMode{
+    width: 30%;
+    height: 100%;
+    display: flex;
+}
+
+#disIcon{
+    margin: 0 .5rem 0 .5rem;
+    font-size: 1.5rem;
+}

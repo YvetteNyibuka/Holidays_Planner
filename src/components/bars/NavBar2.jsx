@@ -2,17 +2,19 @@ import React, { useEffect, useState } from "react";
 import Logo from "../../../public/images/logo.png";
 import { ImSearch } from "react-icons/im";
 import { BiMenuAltRight } from "react-icons/bi";
+import Navigation from '../Navigation';
 
 const NavBar2 = () => {
   const [isFixed, setIsFixed] = useState(false);
+  const [isNavVisible, setIsNavVisible] = useState(false);
+
+  const toggleNav = () => {
+    setIsNavVisible(!isNavVisible);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY === 0) {
-        setIsFixed(false);
-      } else {
-        setIsFixed(true);
-      }
+      setIsFixed(window.scrollY !== 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -36,10 +38,11 @@ const NavBar2 = () => {
         <div className="search">
           <ImSearch style={{ fontSize: "2rem", color: 'black' }} />
         </div>
-        <div className="menu">
+        <div className="menu" onClick={toggleNav}>
           <BiMenuAltRight style={{ fontSize: "2rem", padding: '1rem' }} />
         </div>
       </div>
+      {isNavVisible && <Navigation onClose={toggleNav} />}
     </div>
   );
 };

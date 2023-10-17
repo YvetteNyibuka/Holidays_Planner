@@ -1,0 +1,60 @@
+.aboutCont{
+    height: 45rem;
+    width: 100vw;
+    display: flex;
+    background-color: white;
+}
+
+.photoes{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+}
+.aboutDesc{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: start;
+    flex-direction: column;
+    color: black;
+    padding: 1rem;
+}
+
+.aboutpic1{
+    height: 50%;
+    width: 70%;
+    background-color: white;
+    border:2px solid #C29D59;
+    padding: .5rem;
+}
+.aboutpic2{
+    height: 30%;
+    width: 20%;
+    background-color: white;
+    border:2px solid #C29D59;
+    padding: .5rem;
+    left: 30%;
+    bottom: -45rem;
+    right: 0;
+    position: absolute;
+}
+
+.readmoreBtn{
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    background-color: #C29D59;
+    border-radius: .5rem;
+    color: white;
+    border: none;
+  }
+  .title{
+    border-left: 4px solid #C29D59;
+    font-size: 2rem;
+    color: #C29D59;
+    padding: .5rem;
+  }

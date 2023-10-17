@@ -4,13 +4,17 @@ import PrevButton from './buttons/PrevButton';
 import yvette from "../../public/images/yvette.jpg"
 import izanyi from "../../public/images/izanyi.jpg"
 import nyibuka from "../../public/images/nyibuka.jpg"
+import StickyDestdiv from './StickyDestdiv';
+import About from './About';
+import Tours from './Tours';
+// import Testimonials from './Testimonials';
 
 const Home = () => {
   const backgrounds = [
     {
       image: yvette,
       content: {
-        title: "Russell Baker",
+        title: "The life is short The world is wide",
         description: "When preparing to travel, lay out all your clothes and all your money. Then take half the clothes and twice the money",
       },
     },
@@ -52,6 +56,11 @@ const Home = () => {
       </div>
       <NextButton onClick={handleNextBackground} />
       <PrevButton onClick={handlePrevBackground} />
+      <StickyDestdiv/>
+      <About/>
+      {/* <Destination/> */}
+      <Tours/>
+      {/* <Testimonials/> */}
     </>
   );
 };

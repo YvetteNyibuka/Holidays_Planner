@@ -13,10 +13,15 @@ const Navigation = () => {
         return{color: isActive ? 'blue' : 'brown' }
      }} >About</NavLink>
 
-    <NavLink className='link' to={'/destination'}
+    <NavLink className='link' to={'/login'}
     style={({isActive})=>{
         return{color: isActive ? 'blue' : 'brown' }
-     }} >Destination</NavLink>
+     }} >Login</NavLink>
+
+    <NavLink className='link' to={'/signup'}
+    style={({isActive})=>{
+        return{color: isActive ? 'blue' : 'brown' }
+     }} >Sign Up</NavLink>
 
     <NavLink className='link' to={'/tour'}
     style={({isActive})=>{

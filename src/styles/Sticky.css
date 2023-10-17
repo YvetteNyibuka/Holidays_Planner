@@ -1,0 +1,59 @@
+.stickyCont {
+    height: 8rem;
+    width: 80%;
+    background-color: white;
+    position: absolute;
+    border-left: 2px solid #C29D59;
+    bottom: -5rem;
+}
+
+.findBtn {
+    padding: 1rem 3rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    background-color: #C29D59;
+    border-radius: .5rem;
+    color: white;
+    border: none;
+}
+
+.form {
+    display: flex;
+    padding: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+.time, .location, .travelType {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+    padding-left: 30px;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    margin-bottom: 20px;
+    outline: none; 
+    border: 1px solid black;
+    /* border-radius: .5rem; */
+}
+
+.icon {
+    color: #C29D59;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 10px;
+    top: 60%;
+    transform: translateY(-50%);
+}
+
+#months, #travelType, #time {
+    padding: 1rem;
+    border: none;
+    outline: none;
+    width: 10rem; 
+}

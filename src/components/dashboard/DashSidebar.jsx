@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/DashSidebar.css';
+import '../../styles/DashSidebar.css';
 import { Link } from 'react-router-dom';
 import {RxDashboard} from 'react-icons/rx'
 import {MdOutlinePlace} from 'react-icons/md'
@@ -9,11 +9,11 @@ import {GiForestCamp} from 'react-icons/gi'
 import{FaCalendarAlt, FaUsers} from 'react-icons/fa'
 import {BsChatFill} from 'react-icons/bs'
 import {RiLogoutCircleLine} from 'react-icons/ri'
-import '../styles/DashHeader.css'
+import '../../styles/DashHeader.css'
 import {SlSettings} from 'react-icons/sl'
 import {GoSun} from 'react-icons/go'
 import {BsMoon} from 'react-icons/bs'
-import ppicture from '../../public/images/ppicture.jpg';
+import ppicture from '../../../public/images/ppicture.jpg';
 
 
 const DashSidebar = () => {

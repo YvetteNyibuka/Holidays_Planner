@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Dashboard.css';
+import '../../styles/Dashboard.css';
 import { Outlet } from 'react-router-dom';
 import DashSidebar from './DashSidebar';
 

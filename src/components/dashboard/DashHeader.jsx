@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/DashHeader.css'
+import '../../styles/DashHeader.css'
 import {SlSettings} from 'react-icons/sl'
 import {GoSun} from 'react-icons/go'
 import {BsMoon} from 'react-icons/bs'

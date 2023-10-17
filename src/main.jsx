@@ -9,6 +9,7 @@ import Signup from './components/Signup.jsx';
 import Dashboard from './components/dashboard/Dashboard.jsx';
 import Users from './components/dashboard/contents/Users.jsx'
 import App from './App.jsx'
+import './index.css'
 import Chat from './components/dashboard/contents/Chat.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

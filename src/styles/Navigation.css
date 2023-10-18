@@ -24,15 +24,46 @@
     padding-left: 2rem;
     text-decoration: none;
     padding-top: .5rem;
+    display: flex;
     color: #fff;
     margin: 0 20px;
     font-size: 18px;
   }
-  
+  .dropdown-content{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    /* margin-left: 9rem; */
+   
+  }
+  .modal-container.open .dropdown-content {
+    margin-left: 5rem; 
+  }
+  .modal-container.open #bloglink{
+    margin-top: 2rem;
+  }
+  .dropdown-content a{
+    text-decoration: none;
+    display: flex;
+    color: white;
+    font-size: 18px;
+    background-color: #393939;
+    
+  }
+  .dropdown-content a:hover{
+    text-decoration: line-through;
+    color: #C29D59;
+  }
+
   .link:hover {
     text-decoration: line-through;
     color: #C29D59;
   }
+
+
   /* right side */
 
   .right{

@@ -42,11 +42,11 @@ const Tours = () => {
         {tourData.slice(activeIndex, activeIndex + 3).map((tour, index) => (
           <div className="tourCard" key={index}>
             <div className="tourPic">
-              <img src={tour.image} alt="" style={{ width: "100%", height: "15rem", objectFit: "cover" }} />
+              <img src={tour.image} alt="" style={{ width: "21rem", height: "15rem", objectFit: "cover" }} />
             </div>
             <button className="country">{tour.country}</button>
             <div className="tourDetail">
-              <h6>Holidays planner is a world leading Online Tour booking platform</h6>
+              <h3>Holidays planner is a world leading Online Tour booking platform</h3> <br />
               <p>Far far away, behind the mountains, far from the countries Vokalia and Consonantia,..</p>
             </div>
             <div className="tourInstructions">
@@ -61,7 +61,7 @@ const Tours = () => {
             </div>
             <div className="book">
               <p>{tour.price}</p>
-              <button>Book Now</button>
+              <button id="bookbtn">Book Now</button>
             </div>
           </div>
         ))}

@@ -3,7 +3,7 @@ import '../../styles/Dashboard.css';
 import { Outlet } from 'react-router-dom';
 import DashSidebar from './DashSidebar';
 
-const Dashboard = () => {
+const DashboardLayout = () => {
   return (
     <div>
       <DashSidebar />
@@ -14,4 +14,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardLayout;

@@ -58,9 +58,7 @@ const Home = () => {
       <PrevButton onClick={handlePrevBackground} />
       <StickyDestdiv/>
       <About/>
-      {/* <Destination/> */}
       <Tours/>
-      {/* <Testimonials/> */}
     </>
   );
 };

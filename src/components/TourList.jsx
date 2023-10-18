@@ -71,28 +71,28 @@ const TourList = () => {
       </div>
 
       <div className="tourStaffs">
-        <div className="tourslistBody">
+        <div className="tourslistBodyy">
           {tourData.map((tour, index) => (
             <div className="tourCardd" key={index}>
-              <div className="tourPic">
+              <div className="tourPicc">
                 <img
                   src={tour.image}
                   alt=""
                   style={{ width: "100%", height: "12rem", objectFit: "cover" }}
                 />
               </div>
-              <button className="country">{tour.country}</button>
-              <div className="tourDetail">
-                <h6>
+              <button className="countryy">{tour.country}</button>
+              <div className="tourDetaill">
+                <h3>
                   Holidays planner is a world leading Online Tour booking
                   platform
-                </h6>
+                </h3> <br />
                 <p>
                   Far far away, behind the mountains, far from the countries
                   Vokalia and Consonantia,..
                 </p>
               </div>
-              <div className="tourInstructions">
+              <div className="tourInstructionss">
                 <div className="duration">
                   <h4>Duration</h4>
                   <p>{tour.duration}</p>
@@ -102,9 +102,9 @@ const TourList = () => {
                   <p>{tour.groupSize}</p>
                 </div>
               </div>
-              <div className="book">
+              <div className="bookk">
                 <p>{tour.price}</p>
-                <button className="bookBtn">Book Now</button>
+                <button className="bookBtnn">Book Now</button>
               </div>
             </div>
           ))}

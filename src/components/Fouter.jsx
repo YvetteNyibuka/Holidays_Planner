@@ -1,74 +1,98 @@
-import React from "react";
-import logo4 from "../../public/images/whitelogo.png";
-import payment from "../../public/images/payment-campanies.png";
-import "../styles/Fouter.css";
+import React from 'react'
+import '../styles/Fouter.css';
+import logowhite from '../../public/images/whitelogo.png';
 
-const Footer = () => {
+import paymment from '../../public/images/payment-campanies.png';
+import {LiaFacebookF} from'react-icons/lia';
+import {FaInstagram} from 'react-icons/fa';
+import {AiOutlineTwitter} from 'react-icons/ai'
+function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer-left">
-        <div id="left-elem" className="logo">
-          <img src={logo4} alt="" />
+    <div className="tooter">
+      <div className="allcontain_foot">
+        <div className="container1">
+          <div>
+            <img src= {logowhite} className="footerpic" />
+          </div>
+          <div className="wod1hold">
+            <p>Holiday Planners sit amet consectetur adipisicing elit.</p>
+            <p>
+              Perferendis sapiente tenetur officiis explicabo fugit, sit
+              mollitia
+            </p>
+            <p>eum atque excepturi quaerat autem.</p>
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="Enter your Email"
+              className="place"
+            />
+            <input type="submit" className="sbbutto" value="submit" />
+          </div>
+          <div>
+            <img src={paymment} className="pic" />
+          </div>
         </div>
-        <div id="left-elem" className="content">
-          <p>
-            Holiday Planners sit amet consectetur adipisicing elit. Perferendis
-            sapiente tenetur officiis explicabo fugit, sit mollitia eum atque
-            excepturi quaerat autem.
-          </p>
+        <div className="container2">
+          <div>
+            <div className="hlinecontainer">
+              <h4 className="textt">Navigation</h4>
+            </div>
+            <div className="hline"></div>
+          </div>
+    <div className="textt2">
+          <ul >
+            <li>Home</li>
+            <li>About</li>
+            <li>Destination</li>
+            <li>Tour</li>
+            <li>Blog</li>
+            <li>Contact</li>
+          </ul></div>
         </div>
-        <div id="left-elem" className="email">
-          <input
-            type="email"
-            id="email"
-            style={{ width: "90%" }}
-            placeholder="Enter your email"
-          />
-          <button className="sub">Submit</button>
-        </div>
-        <div id="left-elem" className="partnership">
-          <img src={payment} alt="" style={{ width: "50%", height: "50%" }} />
+        <div className="container3">
+          <div className="linetext">
+            <div className="hline2">
+              <div>
+                <h4>Need Help ?</h4>
+              </div>
+              <div className="line_t"></div>
+            </div>
+            <div className="contohold">
+              <div className="conto1">
+                <p>Call Us</p>
+                <p>+123 456 7890</p>
+              </div>
+              <div className="conto2">
+                <p>Email for Us</p>
+                <p>holidayplanners@gmail.com</p>
+              </div>
+              <div className="conto3">
+                <p>Location</p>
+                <p>Main Street, Victoria 8007.</p>
+              </div>
+              <div className="conto4">
+                <p>Flow Us</p>
+                <p className="footsocial">
+                  <LiaFacebookF /> &nbsp;
+                  <FaInstagram />
+                  &nbsp;
+                  <AiOutlineTwitter />
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="footer-center">
-        <h1>Navigation <hr /></h1> 
-        <div className="navigation">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Destination</a>
-          <a href="#services">Tour</a>
-          <a href="#services">Blogs</a>
-          <a href="#contact">Contact Us</a>
-        </div>
-      </div>
-      <div className="contact-container">
-        <div className="contact-item">
-          <h2>Need Help ?</h2>
-          <hr />
-        </div>
-        <div className="contact-item">
-          <div className="contact-info">
-            <p>Call Us</p>
-            <p>+123 456 7890</p>
-          </div>
-          <div className="contact-info">
-            <p>Email for Us</p>
-            <p>holidayplanners@gmail.com</p>
-          </div>
-        </div>
-        <div className="contact-item">
-          <div className="contact-info">
-            <p>Location</p>
-            <p>Main Street, Victoria 8007.</p>
-          </div>
-          <div className="contact-info">
-            <p>Follow us</p>
-            <p>Social Media Links Here</p>
-          </div>
-        </div>
-      </div>
-    </footer>
+      <br />
+      <div>
+        <hr className="hol" />
+      </div><br></br>
+             <div className='endfoot'>
+      <div><h6>Copyright © 2021 Geek Code Lab. All Rights Reserved.</h6></div>
+      <div><h6>Privacy Policy |Terms of Use |Cookie Policy</h6></div></div>
+    </div>
   );
-};
-
-export default Footer;
+}
+export default Footer

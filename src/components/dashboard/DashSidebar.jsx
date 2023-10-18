@@ -7,7 +7,7 @@ import {PiAirplaneTiltBold} from 'react-icons/pi'
 import {BsCalendarDate}  from 'react-icons/bs'
 import {GiForestCamp} from 'react-icons/gi'
 import{FaCalendarAlt, FaUsers} from 'react-icons/fa'
-import {BsChatFill} from 'react-icons/bs'
+import {SiGooglemessages} from 'react-icons/si'
 import {RiLogoutCircleLine} from 'react-icons/ri'
 import '../../styles/DashHeader.css'
 import {SlSettings} from 'react-icons/sl'
@@ -20,17 +20,12 @@ const DashSidebar = () => {
     const sidebarLinks = [
         {
             icon:<RxDashboard/>,
-            path: "/",
+            path: "/dashboard",
             name: "Dashboard"
         },
         {
-            icon: <MdOutlinePlace/>,
-            path: "/places",
-            name: "Places"
-        },
-        {
             icon: <PiAirplaneTiltBold/>,
-            path: "/tours",
+            path: "tours",
             name: "Tours"
         },
         {
@@ -39,24 +34,29 @@ const DashSidebar = () => {
             name: "Users"
         },
         {
+            icon: <SiGooglemessages/>,
+            path: "querries",
+            name: "Queries",
+        },
+        {
+            icon: <MdOutlinePlace/>,
+            path: "places",
+            name: "Places"
+        },
+        {
             icon: <BsCalendarDate/>,
-            path: "/upcoming",
+            path: "upcomings",
             name: "Upcomings"
         },
         {
             icon: <GiForestCamp/>,
-            path: "/camps",
+            path: "camps",
             name: "Camps"
         },
         {
             icon: <FaCalendarAlt/>,
-            path: "/calendar",
+            path: "calendar",
             name: "Calendar"
-        },
-        {
-            icon: <BsChatFill/>,
-            path: "chat",
-            name: "Chats"
         }
     ];
 

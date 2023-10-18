@@ -1,0 +1,42 @@
+.dashusercont{
+    background-color: white;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    height:100vh; 
+    width: 95%;
+}
+
+ 
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: fit-content;
+  }
+
+  table{
+    width: 70%;
+    height: fit-content;
+  }
+
+  .editt, .deletee{
+    padding: .3rem;
+    background-color: #C29D59;
+    outline: none;
+    border: none;
+    border-radius: .2rem;
+    margin-left: .5rem;
+  }
+
+  .createUser{
+    padding: .5rem;
+    background-color: #C29D59;
+    outline: none;
+    border: none;
+    border-radius: .2rem;
+    margin-top: 1rem;
+  }

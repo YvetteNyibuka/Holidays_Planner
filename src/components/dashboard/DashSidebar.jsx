@@ -14,9 +14,14 @@ import {SlSettings} from 'react-icons/sl'
 import {GoSun} from 'react-icons/go'
 import {BsMoon} from 'react-icons/bs'
 import ppicture from '../../../public/images/ppicture.jpg';
-
+import { useNavigate } from 'react-router-dom';
 
 const DashSidebar = () => {
+     const navigate = useNavigate()
+    const handleLogout = () => {
+        localStorage.removeItem('isLogin')
+       location.reload(navigate('/login'))
+    }
     const sidebarLinks = [
         {
             icon:<RxDashboard/>,
@@ -52,11 +57,6 @@ const DashSidebar = () => {
             icon: <GiForestCamp/>,
             path: "camps",
             name: "Camps"
-        },
-        {
-            icon: <FaCalendarAlt/>,
-            path: "calendar",
-            name: "Calendar"
         }
     ];
 
@@ -82,9 +82,9 @@ const DashSidebar = () => {
                     ))}
                 </ul>
             </div>
-            <div className="logout">
+            <button className="logout" onClick={handleLogout}>
                 <RiLogoutCircleLine/>
-                Logout</div>
+                Logout</button>
         </div>
          <div className='dashHeadercont'>
          <div className="greetUser">

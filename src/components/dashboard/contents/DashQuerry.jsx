@@ -40,6 +40,9 @@ const DashQuerry = () => {
 
   return (
     <div className='dashquerryCont'>
+      <div className="dashtourheader">
+<h1>Received Messages</h1>
+</div>
         <table>
         <thead>
           <tr>
@@ -63,7 +66,6 @@ const DashQuerry = () => {
               <td>{querry.message}</td>
               <td>
                 <div className="action">
-                  <button className='editt'>EDIT</button>
                   <button className='deletee'>DELETE</button>
                 </div>
               </td>

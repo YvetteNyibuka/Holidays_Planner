@@ -3,6 +3,7 @@ import Logo from "../../../public/images/logo.png";
 import { ImSearch } from "react-icons/im";
 import { BiMenuAltRight } from "react-icons/bi";
 import Navigation from '../Navigation';
+import { useNavigate } from "react-router-dom";
 
 const NavBar2 = () => {
   const [isFixed, setIsFixed] = useState(false);
@@ -24,6 +25,12 @@ const NavBar2 = () => {
     };
   }, []);
 
+  const navigate  = useNavigate();
+  const handleNavigate = () => {
+    navigate('/login');
+  };
+  
+
   const navBarClass = isFixed ? "nav2 fixed" : "nav2";
 
   return (
@@ -33,7 +40,7 @@ const NavBar2 = () => {
       </div>
       <div className="part3">
         <div className="reserve">
-          <button className="reserveBtn">RESERVE</button>
+          <button className="reserveBtn" onClick={handleNavigate}>LOGIN</button>
         </div>
         <div className="search">
           <ImSearch style={{ fontSize: "2rem", color: 'black' }} />

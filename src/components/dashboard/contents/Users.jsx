@@ -1,66 +1,69 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../../styles/Users.css'
+import { useParams } from 'react-router-dom'
+import { useEffect } from 'react'
+import axios from 'axios'
 
 const Users = () => {
-
-  const users = [
-    {
-      id:1,
-      names: 'Yvette IZANYIBUKA',
-      email: 'izanyibuka@gmail.com',
-      password: 'p@assword',
-    },
-    {
-      id:2,
-      names: 'Yvette IZANYIBUKA',
-      email: 'izanyibuka@gmail.com',
-      password: 'p@assword'
-    },
-    {
-      id:3,
-      names: 'Yvette IZANYIBUKA',
-      email: 'izanyibuka@gmail.com',
-      password: 'p@assword'
-    },
-    {
-      id:3,
-      names: 'Yvette IZANYIBUKA',
-      email: 'izanyibuka@gmail.com',
-      password: 'p@assword'
-    }
-
-  ]
+   const {id} = useParams();
+  const [Allusers, setAllUsers ]= useState([]);
+  useEffect(() => {
+    const getUsers = async () => {
+      try {
+        const response = await axios.get('https://holiday-planner-4lnj.onrender.com/api/v1/auth/users');
+        if (response && response.data) {
+          setAllUsers(response.data);
+          console.log(response.data);
+        } else {
+          console.error('Invalid API response:', response);
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        // Handle error state, e.g., show an error message to the user
+      }
+    };
+    
+    
+    getUsers()
+  }, []);
+ let i = 0;
 
   return (
 
-  <div className='dashusercont'>
-
-<table>
-  <tr>
-    <td>No</td>
-    <td>Names</td>
-    <td>Email</td>
-    <td>Password</td>
-    <td>Action</td>
-  </tr>
-  {users.map((user, index) => (
-            <tr key={index}>
-              <td>{user.id}</td>
-              <td>{user.names}</td>
-              <td>{user.email}</td>
-              <td>{user.password}</td>
-              <td>
-                <div className="action">
-                  <button className='editt'>EDIT</button>
-                  <button className='deletee'>DELETE</button>
-                </div>
-              </td>
-            </tr>
-          ))}
-</table>
-<button className='createUser'>NEW USER</button>
-
+    <div className='dashusercont'>
+    <div className="dashtourheader">
+        <h1>Registered Users</h1>
+        <button className='newTour'>NEW USER</button>
     </div>
+
+    <table id='tablee' className='styled-table'>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Role</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {Allusers.map((User, index) => (
+                <tr key={index}>
+                    <td>{i+= 1}</td>
+                    <td>{User.role}</td>
+                    <td>{User.email}</td>
+                    <td>{User.password}</td>
+                    <td>
+                        <div className="actionn">
+                            <button className='edit-button'>Edit</button>
+                            <button className='delete-button'>Delete</button>
+                        </div>
+                    </td>
+                </tr>
+            ))}
+        </tbody>
+    </table>
+</div>
    
   )
 }

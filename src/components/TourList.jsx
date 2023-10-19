@@ -1,57 +1,37 @@
-import { React, useState } from "react";
+import  React, { useEffect, useState }  from "react";
 import "../styles/TourList.css";
 import listback from "../../public/images/destination-img2.jpg";
-import Offer1 from "../../public/images/offer-img1.jpg";
-import Offer2 from "../../public/images/offer-img2.jpg";
-import Offer3 from "../../public/images/offer-img3.jpg";
-import Offer4 from "../../public/images/offer-img4.jpg";
-import Offer5 from "../../public/images/offer-img4.jpg";
+import { useNavigate, useParams } from 'react-router-dom';
+import axios from "axios";
 
-const tourData = [
-  {
-    image: Offer1,
-    country: "ITALY",
-    duration: "20days",
-    groupSize: "50+ people",
-    price: "$500",
-  },
-  {
-    image: Offer2,
-    country: "FRANCE",
-    duration: "15days",
-    groupSize: "40+ people",
-    price: "$600",
-  },
-  {
-    image: Offer3,
-    country: "SPAIN",
-    duration: "18days",
-    groupSize: "45+ people",
-    price: "$550",
-  },
-  {
-    image: Offer4,
-    country: "GREECE",
-    duration: "22days",
-    groupSize: "55+ people",
-    price: "$650",
-  },
-  {
-    image: Offer4,
-    country: "RWANDA",
-    duration: "22days",
-    groupSize: "70+ people",
-    price: "$650",
-  },
-  {
-    image: Offer5,
-    country: "POLOGNE",
-    duration: "22days",
-    groupSize: "5 people",
-    price: "$650",
-  },
-];
+
 const TourList = () => {
+
+  const id = useParams();
+  const [tourList, settours] = useState([]);
+  useEffect(() => {
+    const getTours = async () =>{
+      try{
+        const response = await axios.get('https://holiday-planner-4lnj.onrender.com/api/v1/tour/')
+        if(response && response.data){
+          settours(response.data);
+          console.log(response.data)
+        }
+      } catch(error){
+        console.log(response.error.data)
+      }
+    }
+    getTours()
+  }, []);
+
+
+
+  const navigatee  = useNavigate();
+  const handleNavigatee = () => {
+    navigatee('/tour-details');
+  };
+
+
   return (
     <>
       <div
@@ -72,39 +52,37 @@ const TourList = () => {
 
       <div className="tourStaffs">
         <div className="tourslistBodyy">
-          {tourData.map((tour, index) => (
+          {tourList.map((tour, index) => (
             <div className="tourCardd" key={index}>
               <div className="tourPicc">
                 <img
-                  src={tour.image}
+                  src= {tour.backdropImage}
                   alt=""
                   style={{ width: "100%", height: "12rem", objectFit: "cover" }}
                 />
               </div>
-              <button className="countryy">{tour.country}</button>
+              <button className="countryy">{tour.Title}</button>
               <div className="tourDetaill">
                 <h3>
-                  Holidays planner is a world leading Online Tour booking
-                  platform
+                  {tour.Title}
                 </h3> <br />
                 <p>
-                  Far far away, behind the mountains, far from the countries
-                  Vokalia and Consonantia,..
+                  {tour.description}
                 </p>
               </div>
               <div className="tourInstructionss">
                 <div className="duration">
                   <h4>Duration</h4>
-                  <p>{tour.duration}</p>
+                  <p>3 days</p>
                 </div>
                 <div className="size">
                   <h4>Group size</h4>
-                  <p>{tour.groupSize}</p>
+                  <p>{tour.GroupSize}</p>
                 </div>
               </div>
               <div className="bookk">
-                <p>{tour.price}</p>
-                <button className="bookBtnn">Book Now</button>
+                <p>600</p>
+                <button className="bookBtnn" onClick={handleNavigatee}>Book Now</button>
               </div>
             </div>
           ))}

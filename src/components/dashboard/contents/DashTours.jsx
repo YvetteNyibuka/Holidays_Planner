@@ -68,6 +68,11 @@ const DashTours = () => {
 
   return (
     <div className='dashtourCont'>
+<div className="dashtourheader">
+<h1>Available tools</h1>
+  <button  className='newTour'>NEW TOUR</button>
+</div>
+
       <table>
         <thead>
           <tr>

@@ -14,7 +14,7 @@ function Footer() {
           <div>
             <img src= {logowhite} className="footerpic" />
           </div>
-          <div className="wod1hold">
+          <div className="wod1hold" style={{fontSize:'1.2rem'}}>
             <p>Holiday Planners sit amet consectetur adipisicing elit.</p>
             <p>
               Perferendis sapiente tenetur officiis explicabo fugit, sit
@@ -26,9 +26,9 @@ function Footer() {
             <input
               type="text"
               placeholder="Enter your Email"
-              className="place"
+              className="placee"
             />
-            <input type="submit" className="sbbutto" value="submit" />
+            <span><button type="submit" className="sbbutto" value="submit" >SUBMIT</button></span>
           </div>
           <div>
             <img src={paymment} className="pic" />
@@ -37,7 +37,7 @@ function Footer() {
         <div className="container2">
           <div>
             <div className="hlinecontainer">
-              <h4 className="textt">Navigation</h4>
+              <h1 className="textt" >Navigation</h1>
             </div>
             <div className="hline"></div>
           </div>
@@ -54,23 +54,23 @@ function Footer() {
         <div className="container3">
           <div className="linetext">
             <div className="hline2">
-              <div>
-                <h4>Need Help ?</h4>
+            <div className="hlinecontainer">
+                <h3 style={{color: 'white'}}>Need Help ?</h3>
               </div>
               <div className="line_t"></div>
             </div>
             <div className="contohold">
               <div className="conto1">
                 <p>Call Us</p>
-                <p>+123 456 7890</p>
+                <h3>+123 456 7890</h3>
               </div>
               <div className="conto2">
                 <p>Email for Us</p>
-                <p>holidayplanners@gmail.com</p>
+                <h3>holidayplanners@gmail.com</h3>
               </div>
               <div className="conto3">
                 <p>Location</p>
-                <p>Main Street, Victoria 8007.</p>
+                <h3>Main Street, Victoria 8007.</h3>
               </div>
               <div className="conto4">
                 <p>Flow Us</p>

@@ -29,7 +29,6 @@ const Navigation = ({ onClose }) => {
             </div>
             <div className='navbar'>
               <Link className='link' to={'/'} onClick={handleClose}>Home</Link>
-              <Link className='link' to={'/about'} onClick={handleClose}>About</Link>
 
               <div className='dropdown'>
                 <div className='link' onClick={handleDropdownClick}>

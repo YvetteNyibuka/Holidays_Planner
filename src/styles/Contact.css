@@ -37,8 +37,8 @@
   }
   .contact2_text1
   {
-      width: 15rem;
-    height: 2.6rem;
+    width: 15rem;
+    height: 1.5rem;
     background-color: white;
     padding-left: 3rem;
     border: solid 1px black;
@@ -47,7 +47,7 @@
   .contact2_text2
   {
    width: 34.4rem;
-    height: 6rem;
+    height: 4rem;
     background-color: white;
      padding-left: 3rem;
       border: solid 1px black;
@@ -89,9 +89,9 @@
   }
   .endcontact
   {
-       background-image: url('../../public/images/mountainend.jpg');
-     width: 18rem ;
-     height: fit-content;
+    background-image: url('../../public/images/mountainend.jpg');
+    width: 18rem ;
+    height: 12rem;
     padding-left: 1rem;
     padding-right: rem;
     padding-top: 2rem;
@@ -127,7 +127,7 @@
   .contact_textend
   {
       margin-left:10.9rem;
-      margin-top: 5rem;
+      margin-top: 10rem;
   }
   .contact_map
   {

@@ -17,12 +17,12 @@ const TourDetail = () => {
       <div className="allDetails">
         <div className="leftDetails">
           <div className="ttable">
-            <div className="div1" style={{ backgroundColor: "white" }}></div>
-            <div className="div1"></div>
-            <div className="div1"></div>
-            <div className="div1"></div>
-            <div className="div1"></div>
-            <div className="div1"></div>
+            <div className="div1" style={{backgroundColor: '#C29D59'}}>Information</div>
+            <div className="div1">Tour Plan</div>
+            <div className="div1">Location</div>
+            <div className="div1">Garelly</div>
+            <div className="div1">Review</div>
+            {/* <div className="div1"></div> */}
           </div>
           <div className="ddetail">
             <div className="topDetails">
@@ -39,12 +39,12 @@ const TourDetail = () => {
                 </div>
               </div>
             </div>
-            <div className="ttable">
-              <div className="div2" style={{ backgroundColor: "white" }}></div>
-              <div className="div2"></div>
-              <div className="div2"></div>
-              <div className="div2"></div>
-              <div className="div2"></div>
+            <div className="tttable">
+              <div className="div2">2 days</div>
+              <div className="div2">6 people</div>
+              <div className="div2">18</div>
+              <div className="div2">Greece</div>
+              <div className="div2">Discovery</div>
             </div>
 
             <div className="mcont">

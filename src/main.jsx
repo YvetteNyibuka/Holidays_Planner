@@ -31,19 +31,17 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/signup" element={<Signup />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
-        <Route path="/dashboard" element={<DashboardLayout />}>
-          <Route
-            index element={<DashHome/>}
-          />
-          <Route path="users" element={<Users />} />
-          <Route path="users" element={<Users />} />
-          <Route path="camps" element={<Camps />}/>
-          <Route path="tours" element={<DashTours />}/>
-          <Route path='querries' element= {<DashQuerry/>}/>
-          <Route path="upcomings" element={<Upcomings />}/>
-          <Route path="calendar" element={<Calendar />}/>
-          <Route path="places" element={<Places />}/>
-        </Route>
+        <Route path='/dashboard' element={<DashboardLayout/>}>
+              <Route index element={<DashHome />} />
+              <Route path="users" element={<Users />} />
+              <Route path="camps" element={<Camps />} />
+              <Route path="tours" element={<DashTours />} />
+              <Route path='querries' element={<DashQuerry />} />
+              <Route path="upcomings" element={<Upcomings />} />
+              <Route path="calendar" element={<Calendar />} />
+              <Route path="places" element={<Places />} />
+
+          </Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

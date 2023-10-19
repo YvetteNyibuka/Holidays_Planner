@@ -1,42 +1,77 @@
-.dashusercont{
-    background-color: white;
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    text-align: center;
-    height:100vh; 
-    width: 95%;
+
+.dashusercont {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+  height: 100vh;
+  width: 50%; 
+  margin-top: 200%;
+  padding-top: 2rem; 
 }
 
- 
 
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    width: fit-content;
-  }
+.styled-table {
+  width: 30%; 
+  border-collapse: collapse;
+  /* margin-top: 1rem;  */
+  border: 2px solid grey;
+}
 
-  table{
-    width: 70%;
-    height: fit-content;
-  }
+.styled-table th,
+.styled-table td {
+  word-wrap: break-word;
+  padding: 8px 10px; 
+  border-bottom: 1px solid grey;
+  text-align: center;
+  font-size: 14px; 
+}
 
-  .editt, .deletee{
-    padding: .3rem;
-    background-color: #C29D59;
-    outline: none;
-    border: none;
-    border-radius: .2rem;
-    margin-left: .5rem;
-  }
+.styled-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+}
 
-  .createUser{
-    padding: .5rem;
-    background-color: #C29D59;
-    outline: none;
-    border: none;
-    border-radius: .2rem;
-    margin-top: 1rem;
-  }
+.styled-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+.styled-table td.password-cell {
+  max-width: 100px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.edit-button, .delete-button{
+  padding: .5rem;
+  width: 5rem;
+  background-color: #C29D59;
+  outline: none;
+  border: none;
+  border-radius: .2rem;
+  margin-left: .5rem;
+}
+.actionn{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+}
+
+.delete-button{
+  background-color: red;
+  margin-top: 1rem;
+}
+
+.createUser{
+  padding: .5rem;
+  background-color: #C29D59;
+  outline: none;
+  border: none;
+  border-radius: .2rem;
+  margin-top: 1rem;
+}

@@ -37,21 +37,40 @@
 }
 
 .ttable {
-    border: 1px solid black;
+  border: 0.01px solid gray;
     height: 3rem;
     width: 100%;
     display: flex;
     background-color: white;
 }
+.tttable {
+  border: none;
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    background-color: white;
+    
+}
 
 .div1{
-    width: 17%;
-    border: 0.5px solid black;
+    width: 20%;
+    border: 0.01px solid gray;
+    text-align: center;
+    padding: .8rem;
+    font-size: 1.3rem;
+}
+.div1:hover{
+  background-color: #C29D59;
 }
 
 .div2{
     width: 20%;
-    border: 0.5px solid black;
+    border: none;
+    background-color: #C29D59;
+    text-align: center;
+    padding: .8rem;
+    font-size: 1.3rem;
+
 }
 
 .ddetail{
@@ -138,10 +157,12 @@
   .flex1 {
     height: fit-content;
     width: 50%;
+    padding: 2rem;
   }
   .flex2 {
     height: fit-content;
     width: 50%;
+    padding: 2rem;
   }
 
   .rightDetails {

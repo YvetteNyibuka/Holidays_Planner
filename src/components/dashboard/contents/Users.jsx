@@ -3,8 +3,15 @@ import '../../../styles/Users.css'
 import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import axios from 'axios'
+import Edituser from './NewUserForm'
 
 const Users = () => {
+
+const [isEditModalOpen, setEditModalOpen] = useState(false);
+const handleEditClick = () => {
+  setEditModalOpen((previsEditModal) => !previsEditModal);
+};
+  
    const {id} = useParams();
   const [Allusers, setAllUsers ]= useState([]);
   useEffect(() => {
@@ -32,8 +39,9 @@ const Users = () => {
     <div className='dashusercont'>
             <div className="dashuserheader">
                 <h1>Registered Users</h1>
-                <button className='newTour'>NEW USER</button>
+                <button className='newTour' onClick={handleEditClick}>NEW USER</button>
             </div>
+            {isEditModalOpen && <Edituser handleEditClick={handleEditClick} />}
 <div className="mytable">
     <table id='tablee' className='styled-table'>
         <thead>

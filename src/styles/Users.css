@@ -13,7 +13,7 @@
   justify-content: space-between;
   display: flex;
   width: 100%;
-  background-color: red;
+  background-color: white;
   text-align: center;
   padding: 1rem 0;
   z-index: 3; 
@@ -48,7 +48,7 @@
   color: #333;
   position: sticky;
   top: 7rem; 
-  z-index: 2;
+  /* z-index: 2; */
 }
 
 .styled-table tbody tr:nth-child(even) {

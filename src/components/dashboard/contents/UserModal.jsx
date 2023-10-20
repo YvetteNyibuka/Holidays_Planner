@@ -1,11 +1,16 @@
 // import React from 'react';
 // import NewUserForm from './NewUserForm';
-// // import '../styles/Modal.css';
+// import '../../../styles/userModal.css';
 
 // const Modal = ({ isOpen, closeModal }) => {
+// console.log('Modal rendered:', isOpen);
+//   if (!isOpen) {
+//     return null;
+//   }
+
 //   return (
-//     <div className={`modal ${isOpen ? 'open' : ''}`}>
-//       <div className="modal-content">
+//     <div className="modal"  style={{ zIndex: 1004 }}>
+//       <div className="modal-contentt">
 //         <NewUserForm closeModal={closeModal} />
 //       </div>
 //     </div>

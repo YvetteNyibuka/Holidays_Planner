@@ -1,68 +1,85 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-// import '../styles/Form.css';
+import React, {useState}  from "react";
+import "../../../styles/userModal.css";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const NewUserForm = ({ closeModal }) => {
-  const [userData, setUserData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+function Edituser({ onClose, onSave, handleEditClick }) {
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    password: "",
   });
-
-  const handleInputChange = (e) => {
-    setUserData({ ...userData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
+  const Navigate = useNavigate();
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://holiday-planner-4lnj.onrender.com/api/v1/auth/signup", userData);
-      alert('User created successfully!');
-      closeModal(); 
+      await axios.post(
+        "https://holiday-planner-4lnj.onrender.com/api/v1/auth/signup",
+        data
+      );
+      alert("Registered successfully");
+      // Navigate("/login");
     } catch (error) {
-      console.error('Error creating user:', error);
-      alert('Failed to create user. Please try again later.');
+      console.log(error);
     }
   };
-  
 
+  const handleData = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
+
+  const handleSave = () => {
+    onSave();
+    onClose();
+  };
   return (
-    <div className="form-container">
-      <h2>Create New User</h2>
-      <form className="user-form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Full Name"
-          value={userData.name}
-          onChange={handleInputChange}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email Address"
-          value={userData.email}
-          onChange={handleInputChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={userData.password}
-          onChange={handleInputChange}
-        />
-        <input
-          type="password"
-          name="confirmPassword"
-          placeholder="Confirm Password"
-          value={userData.confirmPassword}
-          onChange={handleInputChange}
-        />
-        <button type="submit">Sign Up</button>
-      </form>
+    <div className="mm">
+      <div className="edit-modal">
+        <div className="edit-header">
+          <h2>Create New User</h2>
+        </div>
+        <div className="edit-body">
+          <form id="dashuserform">
+            <div className="form-group">
+              <label>Username:</label>
+              <input type="text"
+              name="name"
+              value={data.name}
+              onChange={handleData}
+               />
+            </div>
+            <div className="form-group">
+              <label>Email:</label>
+              <input type="email" 
+              name="email"
+              onChange={handleData}
+              value={data.email}
+              />
+            </div>
+            <div className="form-group">
+              <label>Password:</label>
+              <input type="Password" 
+              name="password"
+              onChange={handleData}
+              value={data.password}
+              />
+            </div>
+          </form>
+        </div>
+        <div className="edit-footer">
+          <button  type="submit" className="edit-button edit-save" onClick={handleFormSubmit} >
+            Create
+          </button>
+          <button
+            type="button"
+            className="edit-button edit-cancel"
+            onClick={handleEditClick}
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
     </div>
   );
-};
-
-export default NewUserForm;
+}
+export default Edituser;

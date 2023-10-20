@@ -32,6 +32,7 @@ const Signup = () => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
   return (
+    
     <div className="loginContt">
       <div className="loginFormm">
         <form id="loginFormm" action="" onSubmit={handleFormSubmit}>
@@ -86,6 +87,7 @@ const Signup = () => {
               id="loginInputt"
             />
           </div>
+          <div>Signup Content</div>
 
           <button className="loginBtnn">SignUp</button>
         </form>

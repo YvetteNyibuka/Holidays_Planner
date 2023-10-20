@@ -2,15 +2,17 @@
 .dashsharable{
   display: flex;
 }
-.sidenavCont{
-    height: 100vh;
-    width: 20%;
-    position: fixed;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    border: .5px solid lightgray;
+.sidenavCont {
+  height: 100vh;
+  width: 20%;
+  position: fixed;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  border: .5px solid lightgray;
+  z-index: 2; 
 }
+
 
 .profile{
     height: 5rem;
@@ -75,4 +77,53 @@
     display: flex;
     background-color: #C29D59;
     padding: .3rem;
+}
+
+/* :::::::::::::::::::::::::header css:::::::::::::::::::::::::::::::::::::::::*/
+
+.dashHeadercont {
+  width: 80%;
+  margin-left: 20%;
+  height: 3rem;
+  display: flex;
+  color: #666666;
+  position: fixed;
+  background-color: white;
+  margin-top: 0rem;
+  z-index: 2; 
+}
+
+
+.greetUser{
+ width: 90%;
+ height: 100%;
+ display: flex;
+ justify-content: space-between;
+ border-right: #666666 1px solid;
+}
+
+.helllo{
+  width:30%;
+  padding: 0 1rem;
+
+}
+.settings{
+ margin-top: 1.2rem;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+ font-size: 1.5rem;
+ width:10%;
+
+}
+
+.displayMode{
+ width: 30%;
+ height: 100%;
+ display: flex;
+}
+
+#disIcon{
+ margin: 0 .5rem 0 .5rem;
+ font-size: 1.5rem;
 }

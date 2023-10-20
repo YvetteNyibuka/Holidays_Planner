@@ -1,77 +1,73 @@
-
 .dashusercont {
   background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
   text-align: center;
-  height: 100vh;
-  width: 50%; 
-  margin-top: 200%;
-  padding-top: 2rem; 
+  width: 100%;
+  margin-top: 6rem; 
+  padding-top: 2rem;
+  overflow-x: normal; 
 }
 
+.dashuserheader {
+  position: fixed;
+  top: 3rem; 
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  background-color: red;
+  text-align: center;
+  padding: 1rem 0;
+  z-index: 3; 
+}
+
+.newTour{
+  margin-right: 20rem;
+}
 
 .styled-table {
-  width: 30%; 
+  width: 100%; 
+  margin-top: 2rem;
   border-collapse: collapse;
-  /* margin-top: 1rem;  */
-  border: 2px solid grey;
+  /* table-layout: fixed;  */
 }
 
 .styled-table th,
 .styled-table td {
   word-wrap: break-word;
-  padding: 8px 10px; 
+  padding: 8px 10px;
   border-bottom: 1px solid grey;
   text-align: center;
-  font-size: 14px; 
+  font-size: 14px;
+  word-wrap: break-word;
+  white-space: word-wrap; 
+  overflow: hidden;
 }
 
 .styled-table th {
   background-color: #f2f2f2;
   font-weight: bold;
   color: #333;
+  position: sticky;
+  top: 7rem; 
+  z-index: 2;
 }
 
 .styled-table tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }
-
-
-.styled-table td.password-cell {
-  max-width: 100px; 
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.edit-button, .delete-button{
-  padding: .5rem;
-  width: 5rem;
+.edit-button,
+.delete-button,
+.createUser {
+  padding: .5rem 1rem;
   background-color: #C29D59;
+  color: white;
   outline: none;
   border: none;
   border-radius: .2rem;
-  margin-left: .5rem;
-}
-.actionn{
-   display: flex;
-   flex-direction: column;
-   justify-content: space-around;
-}
-
-.delete-button{
-  background-color: red;
   margin-top: 1rem;
+  cursor: pointer;
 }
 
-.createUser{
-  padding: .5rem;
-  background-color: #C29D59;
-  outline: none;
-  border: none;
-  border-radius: .2rem;
+.delete-button {
+  background-color: red;
   margin-top: 1rem;
 }

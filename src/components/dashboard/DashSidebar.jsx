@@ -9,7 +9,6 @@ import {GiForestCamp} from 'react-icons/gi'
 import{FaCalendarAlt, FaUsers} from 'react-icons/fa'
 import {SiGooglemessages} from 'react-icons/si'
 import {RiLogoutCircleLine} from 'react-icons/ri'
-import '../../styles/DashHeader.css'
 import {SlSettings} from 'react-icons/sl'
 import {GoSun} from 'react-icons/go'
 import {BsMoon} from 'react-icons/bs'
@@ -24,37 +23,33 @@ const DashSidebar = () => {
     }
     const sidebarLinks = [
         {
-            icon:<RxDashboard/>,
+            icon:<RxDashboard style={{color: 'black'}}/>,
             path: "/dashboard",
             name: "Dashboard"
         },
         {
-            icon: <PiAirplaneTiltBold/>,
+            icon: <PiAirplaneTiltBold style={{color: 'black'}}/>,
             path: "tours",
             name: "Tours"
         },
         {
-            icon: <FaUsers/>,
+            icon: <FaUsers style={{color: 'black'}}/>,
             path: "users",
             name: "Users"
         },
         {
-            icon: <SiGooglemessages/>,
+            icon: <SiGooglemessages style={{color: 'black'}}/>,
             path: "querries",
             name: "Queries",
         },
+      
         {
-            icon: <MdOutlinePlace/>,
-            path: "places",
-            name: "Places"
-        },
-        {
-            icon: <BsCalendarDate/>,
+            icon: <BsCalendarDate style={{color: 'black'}}/>,
             path: "upcomings",
             name: "Upcomings"
         },
         {
-            icon: <GiForestCamp/>,
+            icon: <GiForestCamp style={{color: 'black'}}/>,
             path: "camps",
             name: "Camps"
         }
@@ -62,7 +57,7 @@ const DashSidebar = () => {
 
     return (
           <div className="dashsharable">
-                    <div className='sidenavCont'>
+            <div className='sidenavCont'>
             <div className="profile">
                 <div className="ppicture">
                     <img src={ppicture} alt="" style={{ width: '100%', height: '100%', borderRadius: '50%' }} />

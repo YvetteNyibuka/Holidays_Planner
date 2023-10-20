@@ -19,7 +19,6 @@ const Users = () => {
         }
       } catch (error) {
         console.error('Error fetching data:', error);
-        // Handle error state, e.g., show an error message to the user
       }
     };
     
@@ -31,11 +30,11 @@ const Users = () => {
   return (
 
     <div className='dashusercont'>
-    <div className="dashtourheader">
-        <h1>Registered Users</h1>
-        <button className='newTour'>NEW USER</button>
-    </div>
-
+            <div className="dashuserheader">
+                <h1>Registered Users</h1>
+                <button className='newTour'>NEW USER</button>
+            </div>
+<div className="mytable">
     <table id='tablee' className='styled-table'>
         <thead>
             <tr>
@@ -63,6 +62,7 @@ const Users = () => {
             ))}
         </tbody>
     </table>
+    </div>
 </div>
    
   )

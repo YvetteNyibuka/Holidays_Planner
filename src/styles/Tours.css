@@ -1,7 +1,7 @@
 .toursCont {
-  /* background-color: red; */
+  background-color: blueviolet;
   height: 150vh;
-  width: 100vw;
+  width: 95vw;
   display: flex;
   flex-direction: column;
   padding: 2rem;

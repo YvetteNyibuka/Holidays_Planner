@@ -7,7 +7,6 @@ import nyibuka from "../../public/images/nyibuka.jpg"
 import StickyDestdiv from './StickyDestdiv';
 import About from './About';
 import Tours from './Tours';
-// import Testimonials from './Testimonials';
 
 const Home = () => {
   const backgrounds = [

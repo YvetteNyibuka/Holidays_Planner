@@ -32,6 +32,7 @@ const handleEditClick = () => {
     
     getUsers()
   }, []);
+  
  let i = 0;
 
   return (

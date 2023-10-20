@@ -1,5 +1,5 @@
 import React, {useState}  from "react";
-import "../../../styles/userModal.css";
+import  "../../../styles/UserModal.css"
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 

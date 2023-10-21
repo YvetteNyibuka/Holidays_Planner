@@ -1,5 +1,5 @@
 .tooter{
-  background-color: #323232;
+  background-color: #323132;
   height: fit-content;
   color: white;
   gap: 5rem;
@@ -48,8 +48,8 @@ border: 0px;
 }
 .allcontain_foot{
  display: flex;
-  flex-direction: row;
-gap:8rem;
+ flex-direction: row;
+ gap:8rem;
 }
 .textt
 {
@@ -148,4 +148,40 @@ list-style-type: square;
 }
 .textt2 {
   padding-left: 1rem;
+}
+
+/* responsiveness stuffs */
+@media (min-width: 360px) and (max-width: 800px) {
+.allcontain_foot{
+  flex-direction: column;
+  height: fit-content;
+  gap:0rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+ }
+ .container1{
+  padding-left: 2rem;
+  }
+  .container2{
+  display: flex;
+}
+  .container3{
+  margin-left: 4rem;
+  }
+
+  .hol{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .endfoot{
+  display: flex;
+  flex-direction: column;
+    margin-left: 3rem;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+}
+
 }

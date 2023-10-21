@@ -26,8 +26,8 @@ const Tours = () => {
     <div className="toursCont">
       <div className="toursTitle">
         <div className="titleLeft">
-          <p style={{ color: "#C29D59", borderLeft: "2px solid #C29D59", padding: ".5rem" }}>Amazing Tours</p>
-          <h2>
+          <p style={{ color: "#C29D59", fontSize:'1.2rem', borderLeft: "2px solid #C29D59", padding: ".5rem" }}>Amazing Tours</p>
+          <h2 id="abouthead">
             Trending, <span style={{ fontWeight: "bolder" }}>Best Selling Tours</span>
             <br />
             And Fun Destinations

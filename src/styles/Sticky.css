@@ -17,7 +17,7 @@
     border: none;
 }
 
-.form {
+.formm {
     display: flex;
     padding: 1.5rem;
     justify-content: space-between;
@@ -56,4 +56,51 @@
     border: none;
     outline: none;
     width: 10rem; 
+}
+/* responsiveness stuffs */
+
+@media (min-width: 360px) and (max-width: 800px) {
+    .stickyCont {
+        height: fit-content;
+        width: 95%;
+        padding: 0;
+        background-color: white;
+        margin-bottom: -5rem;
+    }
+    .formm {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    }
+    .time, .location, .travelType {
+        display: flex;
+        align-items: center;
+        padding-top: .5rem;
+        padding-left: 0px;
+        justify-content: space-between;
+        text-align: center;
+        background-color: white;
+        height: fit-content;
+        width: 9rem;
+        position: relative;
+        margin-bottom: 20px;
+        outline: none; 
+        border: 1px solid black;
+        /* border-radius: .5rem; */
+    }
+    #time {
+        width: 97%;
+        margin-left: 1rem;
+    }
+    #months{
+        width: 97%;
+        margin-left: 1rem;
+    }
+    #travelType{
+        width: 97%;
+        margin-left: 1rem;  
+    }
+    .findBtn {
+        padding: 1rem 2rem;
+        margin-bottom: 1rem;
+    }
 }

@@ -22,7 +22,6 @@ const TourDetail = () => {
             <div className="div1">Location</div>
             <div className="div1">Garelly</div>
             <div className="div1">Review</div>
-            {/* <div className="div1"></div> */}
           </div>
           <div className="ddetail">
             <div className="topDetails">
@@ -31,13 +30,13 @@ const TourDetail = () => {
                   A wonderful serenity has taken possession of my entire soul
                 </p>
               </div>
-              <div className="tr">
+              {/* <div className="tr">
                 <div className="circle">
                   <span className="digit1 ">$1200</span>
                   <div className="diameter"></div>
                   <span className="digit">Per Person</span>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="tttable">
               <div className="div2">2 days</div>
@@ -195,7 +194,9 @@ const TourDetail = () => {
               </div>
             <button type="submit" className="buttoned">BOOO NOW</button>
             </form>
-        <ToorUse />
+            <div className="call">
+            <ToorUse/>
+            </div>
 
           </div>
         </div>

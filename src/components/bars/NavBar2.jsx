@@ -36,14 +36,14 @@ const NavBar2 = () => {
   return (
     <div className={navBarClass} id="nav2">
       <div className="logo">
-        <img src={Logo} alt="" />
+        <img src={Logo} alt="" id="navlogo" />
       </div>
       <div className="part3">
         <div className="reserve">
           <button className="reserveBtn" onClick={handleNavigate}>LOGIN</button>
         </div>
         <div className="search">
-          <ImSearch style={{ fontSize: "2rem", color: 'black' }} />
+          <ImSearch style={{ fontSize: "2rem", color: 'black' }} id="searchIcon" />
         </div>
         <div className="menu" onClick={toggleNav}>
           <BiMenuAltRight style={{ fontSize: "2rem", padding: '1rem' }} />

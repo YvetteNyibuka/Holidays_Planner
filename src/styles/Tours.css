@@ -1,6 +1,6 @@
 .toursCont {
-  background-color: white;
-  height: 150vh;
+  background-color: white(230, 11, 11);
+  height: fit-content;
   width: 95vw;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@
 
 .toursTitle {
   display: flex;
-  height: 20%;
+  height: fit-content;
   width: 80%;
   color: black;
   justify-content: space-between;
@@ -144,4 +144,29 @@
   border-radius: 50%;
   margin: 0 5px;
   cursor: pointer;
+}
+
+@media (min-width: 360px) and (max-width: 800px) {
+#abouthead{
+  font-size: 1.2rem;
+}
+.titleRight {
+  width: 10%;
+}
+
+.toursBody {
+  height: fit-content;
+  width: 80%;
+  flex-direction: column;
+}
+.tourCard{
+  background-color: white;
+  margin-top: 1.3rem;
+}
+.country {
+  margin-top: 55%;
+  font-size: 1.2rem;
+  padding: .6rem 1.8rem;
+}
+
 }

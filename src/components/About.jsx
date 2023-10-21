@@ -26,7 +26,7 @@ const About = () => {
       <div className="aboutDesc">
         <p className="title">About us</p>
         <h2>Plan Your Trip With Us</h2>
-          <p>
+          <p className="descc">
             Far far away, behind the word mountains, far from the countries
             Vokalia and Consonantia, there live the blind texts. Separated they
             live in Bookmarksgrove right at the coast of the Semantics, a large

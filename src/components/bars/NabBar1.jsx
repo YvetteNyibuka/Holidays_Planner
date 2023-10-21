@@ -11,11 +11,11 @@ const Header1 = () => {
       <div className="social_medias">
         <div  className="part1">
           <div className="email" id="social">
-            <MdEmail className="iconSocial" />
+            <MdEmail className="iconSocial" id="contsocial"/>
             <p>izanyibukayvette@gmail.com</p>
           </div>
           <div className="phone" id="social">
-            <BsFillTelephoneFill className="iconSocial" />
+            <BsFillTelephoneFill className="iconSocial" id="contsocial" />
             <p>(+250)-787615313</p>
           </div>
         </div>

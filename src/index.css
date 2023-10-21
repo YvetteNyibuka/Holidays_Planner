@@ -263,4 +263,97 @@ margin-right: .5rem;
     display: flex;
   }
 
-  
+  /* responsiveness stuffs */
+
+  @media (min-width: 360px) and (max-width: 800px) {
+    
+    .social_medias{
+      flex-direction: column;
+      margin: 0;
+      padding: .2rem;
+    }
+
+    .part1{
+      padding-left: 0;
+      width: fit-content;
+      margin: 0;
+      justify-content: space-between;
+    }
+    .email{
+      width: fit-content;
+      border-right: none;
+      padding-left:2rem;
+    }
+   #contsocial{
+    display: none;
+    }
+    .phone{
+      padding-left: 1rem;
+      width: fit-content;
+    }
+/* socialmedia platforms */
+    .part2{
+    display: none;
+    }
+
+    /* nav2 */
+
+    .nav2 {
+      display: flex;
+      margin: 0;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      color: white;
+      padding: .5rem 0.5rem;
+      width: 100%;
+    }
+    .logo{
+      width: 30%;
+    }
+    #navlogo{
+      width: 8rem;
+      height: 2.5rem;
+    }
+
+    .part3{
+      margin-right: 1rem;
+      margin-left: 2rem;
+      width: 65%;
+    }
+    
+
+    .reserveBtn{
+      padding: .5rem 1rem;
+    }
+    .search{
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+    }
+    #searchIcon{
+      font-size: 100%;
+    }
+    .menu{
+      width: 3.3rem;
+      height: 3.3rem;
+    }
+    .nextButton {
+      font-size: 1.5rem;
+      margin-top: -7rem;
+    }
+    .prevButton {
+      font-size: 1.7rem;
+      margin-top: -7rem;
+    }
+
+    #homedesc{
+      text-align: center;
+      font-size: 1.3rem;
+      padding: .5rem;
+    }
+    #hometitle{
+      text-align: center;
+      padding: .5rem;
+    }
+  }

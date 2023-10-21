@@ -5,7 +5,7 @@ import { FaCalendarAlt, FaFlag, FaMapMarkerAlt } from 'react-icons/fa';
 const StickyDestdiv = () => {
   return (
     <div className="stickyCont">
-      <div className="form">
+      <div className="formm">
         <div className="time">
           <FaMapMarkerAlt className="icon" />
           <input type="text" placeholder="Where to?" id="time"/>

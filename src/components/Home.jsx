@@ -50,8 +50,8 @@ const Home = () => {
   return (
     <>
       <div className="home_cont" style={{ backgroundImage: `url(${currentBackground.image})` }}>
-        <h1>{currentBackground.content.title}</h1>
-        <p>{currentBackground.content.description}</p>
+        <h1 id='hometitle'>{currentBackground.content.title}</h1>
+        <p id='homedesc'>{currentBackground.content.description}</p>
       </div>
       <NextButton onClick={handleNextBackground} />
       <PrevButton onClick={handlePrevBackground} />

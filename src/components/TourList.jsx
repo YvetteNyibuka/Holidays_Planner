@@ -38,14 +38,7 @@ const TourList = () => {
         className="tourListCont"
         style={{ backgroundImage: `url(${listback})` }}
       >
-        <h1
-          style={{
-            position: "absolute",
-            margin: "15% 32%",
-            fontSize: "5rem",
-            color: "white",
-          }}
-        >
+        <h1 className="tourlisthome">
           Tour Lists
         </h1>
       </div>

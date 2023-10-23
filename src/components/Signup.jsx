@@ -5,8 +5,11 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { usestatecontext } from "../context/ContextProvider";
 const Signup = () => {
   
+  const {signupMutation} = usestatecontext();
+
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -16,18 +19,19 @@ const Signup = () => {
   const Navigate = useNavigate();
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await axios.post(
-        "https://holiday-planner-4lnj.onrender.com/api/v1/auth/signup",
-        data
-      );
-      alert("Registered successfully");
-      Navigate("/login");
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   await axios.post(
+    //     "https://holiday-planner-4lnj.onrender.com/api/v1/auth/signup",
+    //     data
+    //   );
+    //   alert("Registered successfully");
+    //   Navigate("/login");
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    signupMutation.mutate(data);
   };
-
+ console.log(signupMutation);
   const handleData = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
@@ -88,7 +92,7 @@ const Signup = () => {
             />
           </div>
 
-          <button className="loginBtnn">SignUp</button>
+          <button className="loginBtnn">{signupMutation.isPending? "Registering...": "Register"}</button>
         </form>
         <div className="secAlternative">
           <button className="googleBtnn">

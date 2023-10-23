@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import '../../../styles/Users.css'
 import { useParams } from 'react-router-dom'
-import { useEffect } from 'react'
-import axios from 'axios'
 import Edituser from './NewUserForm'
+import { usestatecontext } from '../../../context/ContextProvider'
 
 const Users = () => {
 
@@ -13,25 +12,7 @@ const handleEditClick = () => {
 };
   
    const {id} = useParams();
-  const [Allusers, setAllUsers ]= useState([]);
-  useEffect(() => {
-    const getUsers = async () => {
-      try {
-        const response = await axios.get('https://holiday-planner-4lnj.onrender.com/api/v1/auth/users');
-        if (response && response.data) {
-          setAllUsers(response.data);
-          console.log(response.data);
-        } else {
-          console.error('Invalid API response:', response);
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-    
-    
-    getUsers()
-  }, []);
+ const{Allusers}= usestatecontext();
   
  let i = 0;
 

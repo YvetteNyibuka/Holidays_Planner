@@ -1,20 +1,36 @@
-.dashtourCont{
-    background-color: white;
+.dashtourContt{
+    /* background-color: red; */
     display: flex; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 60rem;
     margin: auto;
     text-align: center;
-    height:100vh; 
+    height:fit-content; 
     width: 95%;
     margin-top: 7rem;
 }
-.dashtourheader{
-    width: 70%;
+.dashtourheaderr{
+    width: 80%;
+    margin-top: -58rem;
+    background-color: white;
     display: flex;
+    position: fixed;
     justify-content: space-between;
     margin-bottom: 1rem;
+}
+.titleeeee{
+  width: 45%;
+  /* background-color: #f44336; */
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.buttonnnnn{
+  width: 45%;
+  /* background-color: crimson; */
 }
 .newTour{
     background-color: #C29D59;
@@ -23,7 +39,9 @@
     padding: 1rem ;
     text-align: center;
     margin-top: 1rem;
-    width: 7rem;
+    width: 35%;
+    margin-left: 60%;
+    margin-bottom: 1rem;
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
@@ -50,7 +68,7 @@
   }
   
   .tourTable img {
-    width: 80px;
+    width: 50px;
     height: 80px;
     object-fit: cover;
     border-radius: 50%;

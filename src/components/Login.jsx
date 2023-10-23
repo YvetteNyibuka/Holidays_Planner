@@ -1,12 +1,14 @@
-import React, { useState } from "react";
-import axios from "axios"; // Don't forget to import axios if you are using it
+import React, { useContext, useState } from "react";
+import axios from "axios"; 
 import "../styles/Login.css";
 import login from "../../public/images/login.jpg";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { usestatecontext } from "../context/ContextProvider";
 
 const Login = () => {
+  const {loginMutation} = usestatecontext()
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
@@ -17,23 +19,26 @@ const Login = () => {
   };
 
   const navigate = useNavigate();
+  // const {isPending: loginLoading} = loginMutation;
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    console.log(loginData);
-    try {
-      const res = await axios.post(
-        "https://holiday-planner-4lnj.onrender.com/api/v1/auth/login",
-        loginData
-      );
-      console.log(res.data);
-      localStorage.setItem("isLogin", JSON.stringify(res.data.access_token)); 
-      alert("login success");
-     location.reload(navigate("/dashboard"));
-    } catch (error) {
-      console.log(error);
-    }
+    // console.log(loginData);
+    // try {
+    //   const res = await axios.post(
+    //     "https://holiday-planner-4lnj.onrender.com/api/v1/auth/login",
+    //     loginData
+    //   );
+    //   console.log(res.data);
+    //   localStorage.setItem("isLogin", JSON.stringify(res.data.access_token)); 
+    //   alert("login success");
+    //  location.reload(navigate("/dashboard"));
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    loginMutation.mutate(loginData);
   };
+   console.log(loginMutation);
   return (
     <div className="loginContt">
       <div className="loginFormmm">
@@ -69,7 +74,7 @@ const Login = () => {
           <input type="checkbox" /> <span id="inputlabell">Remember me</span>{" "}
           <br />
           <button type="submit" className="loginBtnn">
-            Login
+            {loginMutation.isPending? "Loading...": "Login"}
           </button>
         </form>
         

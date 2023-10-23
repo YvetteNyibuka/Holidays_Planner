@@ -18,9 +18,14 @@ import Upcomings from './components/dashboard/contents/Upcomings.jsx';
 import Calendar from './components/dashboard/contents/Calendar.jsx';
 import Places from './components/dashboard/contents/Places.jsx';
 import DashHome from './components/dashboard/contents/DashHome.jsx';
+import { ContextProvider } from './context/ContextProvider.jsx';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
+const client = new QueryClient;
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <QueryClientProvider client={client}>
+    <ContextProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -44,5 +49,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           </Route>
       </Routes>
     </BrowserRouter>
+    </ContextProvider>
+    </QueryClientProvider>
   </React.StrictMode>
 );

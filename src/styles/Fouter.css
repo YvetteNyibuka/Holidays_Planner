@@ -2,7 +2,8 @@
   background-color: #323132;
   height: fit-content;
   color: white;
-  gap: 5rem;
+  gap: 0rem;
+  width: 100vw;
 }
 .footerpic
 {
@@ -49,7 +50,7 @@ border: 0px;
 .allcontain_foot{
  display: flex;
  flex-direction: row;
- gap:8rem;
+ gap:6rem;
 }
 .textt
 {

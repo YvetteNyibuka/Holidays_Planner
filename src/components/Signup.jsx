@@ -33,9 +33,9 @@ const Signup = () => {
   };
   return (
     
-    <div className="loginContt">
-      <div className="loginFormm">
-        <form id="loginFormm" action="" onSubmit={handleFormSubmit}>
+    <div className="signupContt">
+      <div className="signupFormm">
+        <form id="signupFormm" action="" onSubmit={handleFormSubmit}>
           <h1 style={{ color: "#C29D59" }}>Sign Up</h1>
           <p>Already have an account?</p>
           <div className="namess" id="infosecc">
@@ -87,7 +87,6 @@ const Signup = () => {
               id="loginInputt"
             />
           </div>
-          <div>Signup Content</div>
 
           <button className="loginBtnn">SignUp</button>
         </form>
@@ -109,7 +108,7 @@ const Signup = () => {
         </div>
       </div>
       <div className="loginPicture">
-        <img src={signup} alt="" style={{ width: "90%", height: "40rem" }} />
+        <img src={signup} alt=""  id="signupperson" />
       </div>
     </div>
   );

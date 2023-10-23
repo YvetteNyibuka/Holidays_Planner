@@ -36,8 +36,8 @@ const Login = () => {
   };
   return (
     <div className="loginContt">
-      <div className="loginFormm">
-        <form id="loginFormm" action="" onSubmit={handleLogin}>
+      <div className="loginFormmm">
+        <form id="loginFormmm" action="" onSubmit={handleLogin}>
           <h1 style={{ color: "#C29D59" }}>Login</h1>
           <p>Doesn't have an account yet?</p>
           <div className="emaill" id="infosecc">
@@ -47,7 +47,7 @@ const Login = () => {
             <input
               type="email"
               placeholder="you@example.com"
-              id="loginInputt"
+              id="loginInputtt"
               name="email"
               onChange={handleChange}
               value={loginData.email}
@@ -60,7 +60,7 @@ const Login = () => {
             <input
               type="password"
               placeholder="Enter 6 characters or more"
-              id="loginInputt"
+              id="loginInputtt"
               name="password"
               onChange={handleChange}
               value={loginData.password}
@@ -72,25 +72,24 @@ const Login = () => {
             Login
           </button>
         </form>
-        <div className="secAlternative">
-          <button className="googleBtnn">
-            <FcGoogle style={{ paddingRight: "1rem", fontSize: "1.5rem" }} />
+        
+        <div className="secAlternativee">
+          <button className="googleBtnnn">
+            <FcGoogle id="logicons"/>
             Google
           </button>
-          <button className="facebookBtnn">
+          <button className="facebookBtnnn">
             <FaFacebookF
               style={{
-                paddingRight: "1rem",
-                fontSize: "1.5rem",
                 color: "blue",
               }}
-            />
+              id="logicons"/>
             Facebook
           </button>
         </div>
       </div>
-      <div className="loginPicture">
-        <img src={login} alt="" style={{ width: "80%", height: "30rem" }} />
+      <div className="loginPicturee">
+        <img src={login} alt="" id="loginperson" />
       </div>
     </div>
   );

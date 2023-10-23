@@ -114,11 +114,11 @@ export default function Contact() {
               holidayplanners@gmail.com
             </p>
           </div>
-        </div>
-        {/* <div className="conmtact_elsa">
+        </div> <br />
+        <div className="conmtact_elsa">
           <div> <div></div>888 S Greenville, TX 75081, United States.
           </div>
-        </div> */}
+        </div>
       </section>
       <section className='contact_map'>
         <div className='contact_map'>

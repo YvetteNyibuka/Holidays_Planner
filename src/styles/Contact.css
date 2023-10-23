@@ -5,7 +5,15 @@
     background-repeat: no-repeat;
     height: 35rem; 
     z-index: 8888;
-    
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  .conte{
+    font-size: 6rem;
+    color: white;
   }
   .contact1
   {

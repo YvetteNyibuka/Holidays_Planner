@@ -6,25 +6,64 @@ import { createContext, useContext } from "react";
 const StateContext = createContext();
 
 export const ContextProvider = ({ children }) => {
-  const [Allusers, setAllUsers] = useState([]);
-  useEffect(() => {
-    getUsers();
-  }, []);
-  const getUsers = async () => {
-    try {
-      const response = await axios.get(
-        "https://holiday-planner-4lnj.onrender.com/api/v1/auth/users"
+  // const [Allusers, setAllUsers] = useState([]);
+  // useEffect(() => {
+  //   getUsers();
+  // }, []);
+
+  // const getUsers = async () => {
+  //   const token = localStorage.getItem(info.access_token);
+  //   console.log(token);
+  //   try {
+  //     const response = await axios.get(
+  //       "https://holiday-planner-4lnj.onrender.com/api/v1/auth/users",
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+  //         },
+  //       }
+  //     );
+  //     if (response && response.data) {
+  //       setAllUsers(response.data);
+  //       // console.log(response.data);
+  //     } else {
+  //       console.error("Invalid API response:", response);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //   }
+  // };
+  let user = JSON.parse(localStorage.getItem("info"));
+  let token = user.access_token;
+  let userData = user.user;
+  console.log(userData);
+  let url = "https://holiday-planner-4lnj.onrender.com/api/v1/";
+  const fetchUsersData = useQuery({
+    queryKey: ["users"],
+    queryFn: async () => {
+      const res = await axios.get(url + "auth/users/", {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      });
+      return res.data;
+    },
+  });
+
+  const { data: loggedUser } = useQuery({
+    queryKey: ["logged_users"],
+    queryFn: async () => {
+      const res = await axios.get(
+        url + `auth/users/getOne?fieldName=email&value=${userData.email}`,
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        }
       );
-      if (response && response.data) {
-        setAllUsers(response.data);
-        // console.log(response.data);
-      } else {
-        console.error("Invalid API response:", response);
-      }
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
+      return res.data;
+    },
+  });
 
   const loginMutation = useMutation({
     mutationFn: async (data) => {
@@ -37,7 +76,7 @@ export const ContextProvider = ({ children }) => {
     onSuccess: (data) => {
       console.log(data);
       console.log("Successfully logged in");
-      localStorage.setItem("isLogin", JSON.stringify(data));
+      localStorage.setItem("info", JSON.stringify(data));
       window.location.href = "/dashboard";
     },
   });
@@ -53,24 +92,37 @@ export const ContextProvider = ({ children }) => {
     onSuccess: (data) => {
       console.log(data);
       alert("Registered successfully");
-      localStorage.setItem("isRegister", JSON.stringify(data));
+      localStorage.setItem("access_token", JSON.stringify(data));
       window.href = "/login";
     },
   });
 
-//   tours transactions 
+  //   tours transactions
 
-const { data: DashTours, isLoading: ToursLoading } = useQuery({
-  queryKey: ["tours"],
-  queryFn: async () => {
-    const res = await axios.get("https://holiday-planner-4lnj.onrender.com/api/v1/tour/");
-    return res.data;
-  },
-});
+  const { data: DashTours, isLoading: ToursLoading } = useQuery({
+    queryKey: ["tours"],
+    queryFn: async () => {
+      const res = await axios.get(
+        "https://holiday-planner-4lnj.onrender.com/api/v1/tour/"
+      );
+      return res.data;
+    },
+    onSuccess: (data) => {
+      console.log(data);
+    },
+  });
 
   return (
     <StateContext.Provider
-      value={{ Allusers, setAllUsers, loginMutation, signupMutation, DashTours, ToursLoading }}
+      value={{
+        // Allusers,
+        // setAllUsers,
+        loggedUser,
+        loginMutation,
+        signupMutation,
+        DashTours,
+        ToursLoading,
+      }}
     >
       {children}
     </StateContext.Provider>

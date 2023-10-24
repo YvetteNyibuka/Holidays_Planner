@@ -1,16 +1,14 @@
 import React, {useState}  from "react";
 import  "../../../styles/UserModal.css"
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function Edituser({ onClose, onSave, handleEditClick }) {
+function Newuser({ onClose, onSave, handlecreateClick }) {
   const [data, setData] = useState({
     name: "",
     email: "",
     password: "",
   });
-  const Navigate = useNavigate();
-  const handleFormSubmit = async (e) => {
+  const handleFormSubmitt = async (e) => {
     e.preventDefault();
     try {
       await axios.post(
@@ -33,14 +31,14 @@ function Edituser({ onClose, onSave, handleEditClick }) {
     onClose();
   };
   return (
-    <div className="mm">
-      <div className="edit-modal">
-        <div className="edit-header">
+    <div className="newUser">
+      <div className="newuser-modal">
+        <div className="newuser-header">
           <h2>Create New User</h2>
         </div>
-        <div className="edit-body">
-          <form id="dashuserform">
-            <div className="form-group">
+        <div className="newuser-body">
+          <form id="dashhuserform">
+            <div className="form-groupp">
               <label>Username:</label>
               <input type="text"
               name="name"
@@ -48,7 +46,7 @@ function Edituser({ onClose, onSave, handleEditClick }) {
               onChange={handleData}
                />
             </div>
-            <div className="form-group">
+            <div className="form-groupp">
               <label>Email:</label>
               <input type="email" 
               name="email"
@@ -56,7 +54,7 @@ function Edituser({ onClose, onSave, handleEditClick }) {
               value={data.email}
               />
             </div>
-            <div className="form-group">
+            <div className="form-groupp">
               <label>Password:</label>
               <input type="Password" 
               name="password"
@@ -66,14 +64,14 @@ function Edituser({ onClose, onSave, handleEditClick }) {
             </div>
           </form>
         </div>
-        <div className="edit-footer">
-          <button  type="submit" className="edit-button edit-save" onClick={handleFormSubmit} >
+        <div className="newuser-footer">
+          <button  type="submit" className="edit-button edit-save" onClick={handleFormSubmitt} >
             Create
           </button>
           <button
             type="button"
             className="edit-button edit-cancel"
-            onClick={handleEditClick}
+            onClick={handlecreateClick}
           >
             Cancel
           </button>
@@ -82,4 +80,4 @@ function Edituser({ onClose, onSave, handleEditClick }) {
     </div>
   );
 }
-export default Edituser;
+export default Newuser;

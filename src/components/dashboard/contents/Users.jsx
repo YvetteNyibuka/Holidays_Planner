@@ -1,14 +1,30 @@
 import React, { useState } from 'react'
 import '../../../styles/Users.css'
 import { useParams } from 'react-router-dom'
-import Edituser from './NewUserForm'
+import Newuser from './NewUserForm'
+import Edituser from './Edituser'
 import { usestatecontext } from '../../../context/ContextProvider'
 
 const Users = () => {
 
 const [isEditModalOpen, setEditModalOpen] = useState(false);
+const [isCreateModalOpen, setCreateModalOpen] = useState(false);
+const [emailToEdit, setEmailToEdit] = useState(null); // Initialize emailToEdit state
+
 const handleEditClick = () => {
   setEditModalOpen((previsEditModal) => !previsEditModal);
+};
+
+const handelEdit2 = (email) => {
+    console.log(email);
+    handleEditClick()
+    localStorage.setItem('edit', JSON.stringify(email));
+    setEmailToEdit(email);
+  }
+  
+
+const handleCreateClick = () => {
+    setCreateModalOpen((previsCreateModal) => !previsCreateModal);
 };
   
    const {id} = useParams();
@@ -21,9 +37,10 @@ const handleEditClick = () => {
     <div className='dashusercont'>
             <div className="dashuserheader">
                 <h1>Registered Users</h1>
-                <button className='newTour' onClick={handleEditClick}>NEW USER</button>
+                <button className='newTour' onClick={handleCreateClick} >NEW USER</button>
             </div>
-            {isEditModalOpen && <Edituser handleEditClick={handleEditClick} />}
+            {isEditModalOpen && <Edituser handleEditClick={handleEditClick} emailToEdit={emailToEdit} />}
+            {isCreateModalOpen && <Newuser handleCreateClick={handleCreateClick} />}
 <div className="mytable">
     <table id='tablee' className='styled-table'>
         <thead>
@@ -44,7 +61,7 @@ const handleEditClick = () => {
                     <td>{User.password}</td>
                     <td>
                         <div className="actionn">
-                            <button className='edit-button'>Edit</button>
+                            <button className='edit-button' onClick={()=>handelEdit2(User.email)}>Edit</button>
                             <button className='delete-button'>Delete</button>
                         </div>
                     </td>

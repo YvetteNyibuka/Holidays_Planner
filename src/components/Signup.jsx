@@ -4,7 +4,6 @@ import signup from "../../public/images/signup.jpg";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { usestatecontext } from "../context/ContextProvider";
 const Signup = () => {
   

@@ -1,41 +1,14 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useEffect, useState } from "react";
 import { createContext, useContext } from "react";
 
 const StateContext = createContext();
 
 export const ContextProvider = ({ children }) => {
-  // const [Allusers, setAllUsers] = useState([]);
-  // useEffect(() => {
-  //   getUsers();
-  // }, []);
 
-  // const getUsers = async () => {
-  //   const token = localStorage.getItem(info.access_token);
-  //   console.log(token);
-  //   try {
-  //     const response = await axios.get(
-  //       "https://holiday-planner-4lnj.onrender.com/api/v1/auth/users",
-  //       {
-  //         headers: {
-  //           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-  //         },
-  //       }
-  //     );
-  //     if (response && response.data) {
-  //       setAllUsers(response.data);
-  //       // console.log(response.data);
-  //     } else {
-  //       console.error("Invalid API response:", response);
-  //     }
-  //   } catch (error) {
-  //     console.error("Error fetching data:", error);
-  //   }
-  // };
   let user = JSON.parse(localStorage.getItem("info"));
   let token = user.access_token;
-  let userData = user.user;
+  let userData = user?.user;
   console.log(userData);
 
   let url = "https://holiday-planner-4lnj.onrender.com/api/v1/";
@@ -101,8 +74,21 @@ export const ContextProvider = ({ children }) => {
     },
   });
 
-  //   tours transactions
+const { data: SingleUSer, isLoading: SingleUserLoading } = useQuery({
+  queryKey: ["user"], // Pass email as part of the queryKey
+  queryFn: async (email) => {
+    const res = await axios.get(
+      url + `auth/users/getOne?fieldName=email&value=${email}`,
+    );
+console.log(res);
+    return res.data;
+  },
+});
 
+
+
+
+  //   tours transactions
   const { data: DashTours, isLoading: ToursLoading } = useQuery({
     queryKey: ["tours"],
     queryFn: async () => {
@@ -125,6 +111,8 @@ export const ContextProvider = ({ children }) => {
         signupMutation,
         DashTours,
         ToursLoading,
+        SingleUserLoading,
+        SingleUSer
       }}
     >
       {children}

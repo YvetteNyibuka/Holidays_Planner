@@ -8,7 +8,6 @@ function Edituser({ onClose, onSave, handleEditClick, emailToEdit }) {
     email: "",
     password: "",
   });
-  const [newdata, setnwdata] = useState({});
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -28,7 +27,7 @@ function Edituser({ onClose, onSave, handleEditClick, emailToEdit }) {
   useEffect(() => {
     const handleGetSingleUser = async (email) => {
       try {
-        const res = await axios.get(`https://holiday-planner-4lnj.onrender.com/api/v1/auth/users/getOne/${email}`);
+        const res = await axios.get(`https://holiday-planner-4lnj.onrender.com/api/v1/auth/users/getOne?fieldName=email&value=${email}`);
         const userData = res.data;
         setData(userData);
       } catch (error) {
@@ -40,9 +39,6 @@ function Edituser({ onClose, onSave, handleEditClick, emailToEdit }) {
       handleGetSingleUser(emailToEdit);
     }
   }, [emailToEdit]);
-  
-
-
   const handleData = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };

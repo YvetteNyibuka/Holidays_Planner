@@ -17,14 +17,14 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     width: 400px;
     z-index: 10000;
-   background-color: red;
+   background-color: white;
    border-radius: 5px;
    text-align: start;
   }
   .edit-header{
     display: flex;
     justify-content: space-between;
-    background-color: #C29D59;
+    background-color: white;
     align-items: center;
     border-bottom: 1px solid #ccc;
     margin-bottom: 10px;

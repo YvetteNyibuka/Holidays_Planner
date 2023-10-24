@@ -37,8 +37,9 @@ export const ContextProvider = ({ children }) => {
   let token = user.access_token;
   let userData = user.user;
   console.log(userData);
+
   let url = "https://holiday-planner-4lnj.onrender.com/api/v1/";
-  const fetchUsersData = useQuery({
+  const { data: fetchUsersData} = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
       const res = await axios.get(url + "auth/users/", {
@@ -48,6 +49,9 @@ export const ContextProvider = ({ children }) => {
       });
       return res.data;
     },
+    onSuccess: (data) => {
+      console.log(res.data);
+    }
   });
 
   const { data: loggedUser } = useQuery({
@@ -115,8 +119,7 @@ export const ContextProvider = ({ children }) => {
   return (
     <StateContext.Provider
       value={{
-        // Allusers,
-        // setAllUsers,
+        fetchUsersData,
         loggedUser,
         loginMutation,
         signupMutation,

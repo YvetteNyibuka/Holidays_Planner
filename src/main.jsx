@@ -8,7 +8,7 @@ import Login from './components/Login.jsx';
 import Signup from './components/Signup.jsx';
 import Contact from './components/Contact.jsx';
 import DashboardLayout from './components/dashboard/DashboardLayout.jsx';
-import Users from './components/dashboard/contents/Users.jsx'
+import Users from './components/dashboard/contents/Users.jsx';
 import App from './App.jsx'
 import './index.css'
 import Camps from './components/dashboard/contents/Camps.jsx';

@@ -20,7 +20,7 @@ const DashSidebar = () => {
   const navigate = useNavigate();
   const { loggedUser } = usestatecontext();
   const handleLogout = () => {
-    localStorage.removeItem("isLogin");
+    localStorage.removeItem("info");
     location.reload(navigate("/login"));
   };
   const sidebarLinks = [

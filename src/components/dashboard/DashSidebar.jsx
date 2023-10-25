@@ -7,7 +7,7 @@ import { BsCalendarDate } from "react-icons/bs";
 import { GiForestCamp } from "react-icons/gi";
 import { FaUsers } from "react-icons/fa";
 import { SiGooglemessages } from "react-icons/si";
-import { RiLogoutCircleLine } from "react-icons/ri";
+import { FiLogOut } from "react-icons/fi";
 import { SlSettings } from "react-icons/sl";
 import { GoSun } from "react-icons/go";
 import { BsMoon } from "react-icons/bs";
@@ -83,11 +83,13 @@ const DashSidebar = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </div>{" "}
+        {/* <div className="looog"> */}
         <button className="logout" onClick={handleLogout}>
-          <RiLogoutCircleLine />
+          <FiLogOut className="logicon" />
           Logout
         </button>
+        {/* </div> */}
       </div>
       <div className="dashHeadercont">
         <div className="greetUser">

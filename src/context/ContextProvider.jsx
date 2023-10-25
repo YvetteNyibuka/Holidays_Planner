@@ -6,7 +6,7 @@ const StateContext = createContext();
 
 export const ContextProvider = ({ children }) => {
   let user = JSON.parse(localStorage.getItem("info"));
-  let token = user.access_token;
+  let token = user?.access_token;
   let userData = user?.user;
   // console.log(userData);
 

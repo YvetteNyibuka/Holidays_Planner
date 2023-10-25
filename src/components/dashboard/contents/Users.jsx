@@ -4,13 +4,14 @@ import Newuser from "./NewUserForm";
 import Edituser from "./Edituser";
 import { usestatecontext } from "../../../context/ContextProvider";
 import axios from "axios";
+import { FaEdit, FaTrash } from "react-icons/fa";
 
 const Users = () => {
   const { fetchUsersData = [] } = usestatecontext();
-  const {SingleUSer} = usestatecontext();
+  const { SingleUSer } = usestatecontext();
 
-    let url = "https://holiday-planner-4lnj.onrender.com/api/v1/";
-let user = JSON.parse(localStorage.getItem("info"));
+  let url = "https://holiday-planner-4lnj.onrender.com/api/v1/";
+  let user = JSON.parse(localStorage.getItem("info"));
   let token = user.access_token;
 
   const [isEditModalOpen, setEditModalOpen] = useState(false);
@@ -40,31 +41,28 @@ let user = JSON.parse(localStorage.getItem("info"));
     });
     const data = await res.data;
     alert(data.message);
-      }
+  };
 
-const handleGetSingleUser = async (email) => {
-  console.log(email);
-  try {
-    const res = await fetch(
-      url + `auth/users/getOne?fieldName=email&value=${email}`,
-      {
-        method: "GET",
-      }
-    );
+  const handleGetSingleUser = async (email) => {
+    console.log(email);
+    try {
+      const res = await fetch(
+        url + `auth/users/getOne?fieldName=email&value=${email}`,
+        {
+          method: "GET",
+        }
+      );
 
-    if (res.ok) {
-      const data = await res.json();
-      console.log(data);
-    } else {
-      console.error("Error fetching data");
+      if (res.ok) {
+        const data = await res.json();
+        console.log(data);
+      } else {
+        console.error("Error fetching data");
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
     }
-  } catch (error) {
-    console.error("Error fetching data:", error);
-  }
-};
-
-
-
+  };
 
   let i = 0;
 
@@ -72,7 +70,7 @@ const handleGetSingleUser = async (email) => {
     <div className="dashusercontt">
       <div className="dashuserheader">
         <div className="titleee">
-          <h1 className="avail">Registered Users</h1>
+          <h2 className="avail">Registered Users</h2>
         </div>
         <div className="newuserrrr">
           <button className="newTour" onClick={handleCreateClick}>
@@ -108,10 +106,15 @@ const handleGetSingleUser = async (email) => {
                       className="edit-button"
                       onClick={() => handleEdit2(User.email)}
                     >
-                      Edit
+                      <FaEdit />
                     </button>
 
-                    <button className="delete-button" onClick={()=>handleDeleteClick(User.email)}>Delete</button>
+                    <button
+                      className="delete-button"
+                      onClick={() => handleDeleteClick(User.email)}
+                    >
+                      <FaTrash />
+                    </button>
                   </div>
                 </td>
               </tr>

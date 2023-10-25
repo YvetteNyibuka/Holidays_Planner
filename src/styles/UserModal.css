@@ -1,8 +1,8 @@
-.newUser{
+.newUser {
   background-color: rgba(191, 182, 182, 0.5);
   width: 100%;
-  height: 80vh;
-  margin-top:2rem ;
+  height: fit-content;
+  margin-top: 2rem;
   position: absolute;
   z-index: 1000;
 }
@@ -17,11 +17,11 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   width: 400px;
   z-index: 10000;
- background-color: white;
- border-radius: 5px;
- text-align: start;
+  background-color: white;
+  border-radius: 5px;
+  text-align: start;
 }
-.newuser-header{
+.newuser-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,9 +48,9 @@
 
 .form-groupp input {
   width: 90%;
-  padding: .7rem;
+  padding: 0.7rem;
   border: 1px solid grey;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 .newuser-footer {
   text-align: right;
@@ -62,7 +62,7 @@
   cursor: pointer;
 }
 .edit-save {
-  background: #C29D59;
+  background: #c29d59;
   color: #fff;
 }
 .edit-cancel {

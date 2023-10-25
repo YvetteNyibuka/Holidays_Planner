@@ -1,23 +1,50 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/TourDetail.css";
 import destinatio from "../../public/images/destination-img2.jpg";
 import { BsCheckLg } from "react-icons/bs";
 import ToorUse from "./ToorUse";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 const TourDetail = () => {
   const [isCheck, setIsCheck] = useState(false);
 
+  const { id } = useParams();
+  console.log(id);
+
+  const [tourr, setTourr] = useState([]);
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get(
+          `https://holiday-planner-4lnj.onrender.com/api/v1/tour/getElement?fieldName=_id&value=${id}`
+        );
+        const data = response.data;
+        setTourr(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+
+    fetchData(); // Immediately invoke the async function
+
+    // You don't need to return anything from useEffect
+  }, [id]); // Include id in the dependency array to re-run the effect when id changes
+
+  console.log(tourr);
   const handleIsCheck = () => {
     setIsCheck((check) => !check);
   };
   return (
     <>
       <div className="details">
-        <p className="italy">Italy</p>
+        <p className="italy">{tourr.Title}</p>
       </div>
       <div className="allDetails">
         <div className="leftDetails">
           <div className="ttable">
-            <div className="div1" style={{backgroundColor: '#C29D59'}}>Information</div>
+            <div className="div1" style={{ backgroundColor: "#C29D59" }}>
+              Information
+            </div>
             <div className="div1">Tour Plan</div>
             <div className="div1">Location</div>
             <div className="div1">Garelly</div>
@@ -39,11 +66,11 @@ const TourDetail = () => {
               </div> */}
             </div>
             <div className="tttable">
-              <div className="div2">2 days</div>
-              <div className="div2">6 people</div>
-              <div className="div2">18</div>
-              <div className="div2">Greece</div>
-              <div className="div2">Discovery</div>
+              <div className="div2">{tourr.Duration} Months</div>
+              <div className="div2">{tourr.GroupSize}</div>
+              <div className="div2">{tourr.Seats}</div>
+              <div className="div2">{tourr.destination}</div>
+              <div className="div2">{tourr.TourType}</div>
             </div>
 
             <div className="mcont">
@@ -69,7 +96,7 @@ const TourDetail = () => {
             </div>
             <div className="imagedivv">
               <img
-                src={destinatio}
+                src={tourr.backdropImage}
                 className=""
                 style={{ width: "100%" }}
               ></img>
@@ -79,7 +106,7 @@ const TourDetail = () => {
                 <p>Destination</p>
               </div>
               <div className="flex2">
-                <p>Greece</p>
+                <p>{tourr.destination}</p>
               </div>
             </div>
             <div className="flexes">
@@ -95,7 +122,7 @@ const TourDetail = () => {
                 <p>Departure Time</p>
               </div>
               <div className="flex2">
-                <p>9:15 AM To 9:30 AM.</p>
+                <p>{tourr.departureTime} AM To 9:30 AM.</p>
               </div>
             </div>
             <div className="flexes">
@@ -192,15 +219,15 @@ const TourDetail = () => {
                 </div>
                 <p>Check Availability</p>
               </div>
-            <button type="submit" className="buttoned">BOOO NOW</button>
+              <button type="submit" className="buttoned">
+                BOOO NOW
+              </button>
             </form>
             <div className="call">
-            <ToorUse/>
+              <ToorUse />
             </div>
-
           </div>
         </div>
-
       </div>
     </>
   );

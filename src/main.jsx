@@ -31,7 +31,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<Layout />}>
           <Route index element={<App />} />
           <Route path="/tour" element={<TourList />} />
-          <Route path="/tour-details" element={<TourDetail />} />
+          <Route path="/tour-details/:id" element={<TourDetail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/contact" element={<Contact />} />

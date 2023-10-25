@@ -1,190 +1,185 @@
-.tourListCont{
-    height: 100vh;
-    width: 100vw;
-    flex-direction: column;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+.tourListCont {
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
-.tourStaffs{
-    height: fit-content;
-    width: 100%;
-    padding-left: 2%;
-    display: flex;
-
+.tourStaffs {
+  height: fit-content;
+  width: 100%;
+  padding-left: 2%;
+  display: flex;
 }
 .tourslistBodyy {
-  width:fit-content;
+  width: 60%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
   gap: 1rem;
   justify-content: space-between;
   padding: 1rem;
 }
-.tourlisthome{
+.tourlisthome {
   position: absolute;
   margin: 15% 32%;
   font-size: 5rem;
-  color: white; 
+  color: white;
 }
 
-  
 .tourCardd {
   height: fit-content;
-  width: 100%;
+  width: 90%;
   background-color: white;
   display: flex;
   flex-direction: column;
+  box-shadow: 0px 3px 0px 0px lightgray;
   margin: 1rem;
-  padding: 1rem;
+  padding-bottom: 1rem;
   margin-top: 3rem;
-  border: 3px solid #C29D59;
+  border-left: 2px solid #c29d59;
 }
 .tourPicc {
   height: 40%;
   width: 100%;
   object-fit: cover;
 }
-  
-.tourDetaill{
+
+.tourDetaill {
   height: 20%;
   width: 92%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 1rem;
-
 }
 .tourInstructionss,
-.bookk{
+.bookk {
   height: 20%;
   width: 92%;
   display: flex;
   justify-content: space-around;
   background-color: white;
 }
-  
-.countryy{
-  background-color: #C29D59;
+
+.countryy {
+  background-color: #c29d59;
   padding: 1rem 1.2rem;
   margin: 10.5rem 0 0 1rem;
   border: none;
   cursor: pointer;
   position: absolute;
 }
-  
-  .bookBtnn{
-    padding: 1rem 1rem;
-    margin-left: 2rem;
-    font-size: 1rem;
-    height: 3rem;
-    background-color: #C29D59;
-    border-radius: .5rem;
-    color: white;
-    border: none;
-  }
 
-  .staffRight {
-    position: absolute;
-    left: 67%; 
-    top: 92%; 
-    width: 25rem;
-    padding: 0 1rem;
-    background-color: white; 
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  }
-  
-  #tourForm {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .findeNowBtn,
-  .bookBtn,
-  .monthss,
-  .durationn {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 0.5rem;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .findeNowBtn {
-    background-color: #C29D59;
-  }
-  
-  .bookBtn {
-    width: 8rem;
-    background-color: #C29D59; 
-  }
-  
-  
-  input[type="text"], input[type="checkbox"], select {
-    border: none;
-    padding: 1rem;
-    font-size: 1rem;
-    border-radius: 0.5rem;
-    outline: none; 
-    border: 1px solid black;
-    
-  }
-  select{
-    width: 100%;
-  }
-  input[type="checkbox"] {
-    height: 1.5rem; 
-    width: 1.5rem;
-  }
-  
-  #label{
-    font-size: 1.5rem; 
-    margin-left: 0.5rem;
-  }
-.check :checked{
-  background-color: #C29D59;
+.bookBtnn {
+  padding: 1rem 1rem;
+  margin-left: 2rem;
+  font-size: 1rem;
+  height: 3rem;
+  background-color: #c29d59;
+  border-radius: 0.5rem;
+  color: white;
+  border: none;
 }
 
-  /* responsiveness stuffs */
+.staffRight {
+  position: absolute;
+  left: 67%;
+  top: 92%;
+  width: 25rem;
+  padding: 0 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#tourForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.findeNowBtn,
+.bookBtn,
+.monthss,
+.durationn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.findeNowBtn {
+  background-color: #c29d59;
+}
+
+.bookBtn {
+  width: 8rem;
+  background-color: #c29d59;
+}
+
+input[type="text"],
+input[type="checkbox"],
+select {
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid black;
+}
+select {
+  width: 100%;
+}
+input[type="checkbox"] {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+#label {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+.check :checked {
+  background-color: #c29d59;
+}
+
+/* responsiveness stuffs */
 @media (min-width: 360px) and (max-width: 800px) {
-  .tourlisthome{
+  .tourlisthome {
     margin: 60% 32%;
-  } 
-  .tourStaffs{
+  }
+  .tourStaffs {
     height: fit-content;
     width: 100%;
     padding-left: 2%;
     flex-direction: column-reverse;
-    margin-top: 55rem ;
+    margin-top: 55rem;
+  }
+  .staffRight {
+    left: 0;
+    width: 98%;
+    padding: 0.5rem;
+  }
+  .tourslistBodyy {
+    width: 90%;
+    display: grid;
+    margin: 5rem 0 0 0;
+    padding: 0;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0.5rem;
+  }
+  .tourCardd {
+    width: 90%;
+    margin: 0rem;
+    padding: 1rem;
+    margin-top: 3rem;
+  }
 }
-.staffRight {
-  left: 0; 
-  width: 98%;
-  padding: 0.5rem;
-}
-.tourslistBodyy {
-  width:90%;
-  display: grid;
-  margin: 5rem 0 0 0;
-  padding: 0;
-  grid-template-columns: repeat(1, 1fr);
-  padding: 0.5rem;
-}
-.tourCardd {
-  width: 90%;
-  margin: 0rem;
-  padding: 1rem;
-  margin-top: 3rem;
-}
-}
-  
-  
-  

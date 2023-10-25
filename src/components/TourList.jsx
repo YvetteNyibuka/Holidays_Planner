@@ -1,36 +1,35 @@
-import  React, { useEffect, useState }  from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/TourList.css";
 import listback from "../../public/images/destination-img2.jpg";
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-
 const TourList = () => {
-
   const id = useParams();
   const [tourList, settours] = useState([]);
   useEffect(() => {
-    const getTours = async () =>{
-      try{
-        const response = await axios.get('https://holiday-planner-4lnj.onrender.com/api/v1/tour/')
-        if(response && response.data){
+    const getTours = async () => {
+      try {
+        const response = await axios.get(
+          "https://holiday-planner-4lnj.onrender.com/api/v1/tour/"
+        );
+        if (response && response.data) {
           settours(response.data);
-          console.log(response.data)
+          console.log(response.data);
         }
-      } catch(error){
-        console.log(response.error.data)
+      } catch (error) {
+        console.log(response.error.data);
       }
-    }
-    getTours()
+    };
+    getTours();
   }, []);
 
+  console.log("===================================", tourList);
 
-
-  const navigatee  = useNavigate();
-  const handleNavigatee = () => {
-    navigatee('/tour-details');
+  const navigatee = useNavigate();
+  const handleNavigatee = (id) => {
+    navigatee(`/tour-details/${id}`);
   };
-
 
   return (
     <>
@@ -38,9 +37,7 @@ const TourList = () => {
         className="tourListCont"
         style={{ backgroundImage: `url(${listback})` }}
       >
-        <h1 className="tourlisthome">
-          Tour Lists
-        </h1>
+        <h1 className="tourlisthome">Tour Lists</h1>
       </div>
 
       <div className="tourStaffs">
@@ -49,19 +46,15 @@ const TourList = () => {
             <div className="tourCardd" key={index}>
               <div className="tourPicc">
                 <img
-                  src= {tour.backdropImage}
+                  src={tour.backdropImage}
                   alt=""
                   style={{ width: "100%", height: "12rem", objectFit: "cover" }}
                 />
               </div>
               <button className="countryy">{tour.Title}</button>
               <div className="tourDetaill">
-                <h3>
-                  {tour.Title}
-                </h3> <br />
-                <p>
-                  {tour.description}
-                </p>
+                <h3>{tour.Title}</h3> <br />
+                <p>{tour.description}</p>
               </div>
               <div className="tourInstructionss">
                 <div className="duration">
@@ -75,7 +68,12 @@ const TourList = () => {
               </div>
               <div className="bookk">
                 <p>600</p>
-                <button className="bookBtnn" onClick={handleNavigatee}>Book Now</button>
+                <button
+                  className="bookBtnn"
+                  onClick={() => handleNavigatee(tour?._id)}
+                >
+                  Book Now
+                </button>
               </div>
             </div>
           ))}
@@ -174,19 +172,30 @@ const TourList = () => {
           </div>
 
           <div className="tourReason">
-            <h2 style={{borderLeft: '3px solid #C29D59', padding: '.5rem'}}>WHY BOOK WITH US?</h2>
-            <p style={{fontSize:'1.2rem'}}>Best Price Guarantee <br />
-               Customer care available 24/7 <br />
-               Free Travel Insureance <br />
-               Hand-picked Tours & Activities</p>
+            <h2 style={{ borderLeft: "3px solid #C29D59", padding: ".5rem" }}>
+              WHY BOOK WITH US?
+            </h2>
+            <p style={{ fontSize: "1.2rem" }}>
+              Best Price Guarantee <br />
+              Customer care available 24/7 <br />
+              Free Travel Insureance <br />
+              Hand-picked Tours & Activities
+            </p>
           </div>
-          <div className="question" style={{backgroundColor:'#C29D59', padding:'2rem'}}>
-            <h2 style={{borderLeft: '3px solid black ', padding: '.5rem'}}>GET A QUESTION?</h2>
-            <p style={{fontSize:'1.2rem'}}>Do not hesitage to give us a call. <br />
-             We are an expert team and <br />
-              we are happy to talk to you.</p>
-              <p>holidayplanners@gmail.com</p>
-              <p>+123 456 7890</p>
+          <div
+            className="question"
+            style={{ backgroundColor: "#C29D59", padding: "2rem" }}
+          >
+            <h2 style={{ borderLeft: "3px solid black ", padding: ".5rem" }}>
+              GET A QUESTION?
+            </h2>
+            <p style={{ fontSize: "1.2rem" }}>
+              Do not hesitage to give us a call. <br />
+              We are an expert team and <br />
+              we are happy to talk to you.
+            </p>
+            <p>holidayplanners@gmail.com</p>
+            <p>+123 456 7890</p>
           </div>
         </div>
       </div>

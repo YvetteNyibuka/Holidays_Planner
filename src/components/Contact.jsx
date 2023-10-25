@@ -1,5 +1,5 @@
-import React from 'react'
-import '../styles/Contact.css';
+import React from "react";
+import "../styles/Contact.css";
 export default function Contact() {
   return (
     <div className="CONTACT">
@@ -114,14 +114,15 @@ export default function Contact() {
               holidayplanners@gmail.com
             </p>
           </div>
-        </div> <br />
-        <div className="conmtact_elsa">
-          <div> <div></div>888 S Greenville, TX 75081, United States.
+
+          <br />
+          <div className="conmtact_owner">
+            <p>888 S Greenville, TX 75081, United States.</p>
           </div>
         </div>
       </section>
-      <section className='contact_map'>
-        <div className='contact_map'>
+      <section className="contact_map">
+        <div className="contact_map">
           <iframe
             title="Google Map"
             width="700"

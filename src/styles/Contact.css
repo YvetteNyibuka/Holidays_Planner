@@ -1,163 +1,280 @@
-.contact_back{
-    background-image: url('../../public/images/contactimage1.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 35rem; 
-    z-index: 8888;
-    text-align: center;
+.contact_back {
+  background-image: url("../../public/images/contactimage1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 35rem;
+  z-index: 8888;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.conte {
+  font-size: 6rem;
+  color: white;
+}
+.contact1 {
+  margin-top: 5rem;
+  font-family: "Times New Roman", Times, serif;
+}
+.contact2_holder {
+  background-color: white;
+}
+.contact2 {
+  color: black;
+  margin-left: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 5rem;
+}
+.contact2a {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.contact2b {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.contact2_text1 {
+  width: 15rem;
+  height: 1.5rem;
+  background-color: white;
+  padding-left: 3rem;
+  border: solid 1px black;
+  border-radius: 5px;
+}
+.contact2_text2 {
+  width: 34.4rem;
+  height: 4rem;
+  background-color: white;
+  padding-left: 3rem;
+  border: solid 1px black;
+  border-radius: 5px;
+}
+.encontact {
+  background-image: url("mountainend.jpg");
+  width: 18rem;
+  height: 15rem;
+}
+.CONTACT_container {
+  margin-top: -40rem;
+  margin-left: 51rem;
+  background-color: white;
+  padding-top: 1.7rem;
+  margin-right: 9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.CONTACT {
+  background-color: white;
+}
+.contact_text1 {
+  padding-left: 2rem;
+}
+.TB3_contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 5px;
+  border-bottom: solid 2px rgb(159, 154, 154);
+  height: 10rem;
+  width: 15rem;
+}
+.endcontact {
+  background-image: url("../../public/images/mountainend.jpg");
+  width: 18rem;
+  height: 12rem;
+  padding-left: 1rem;
+  padding-right: rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.address1_contact {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  gap: 1rem;
+}
+.contact_butto {
+  width: 1.5rem;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  border: solid 1px rgb(187, 182, 182);
+  height: 1.5rem;
+}
+.contact_butto:hover {
+  background-color: #c29d59;
+}
+.address_text1 {
+  border-left: solid 2px #c29d59;
+  padding-left: 0.6rem;
+  align-items: center;
+}
+.contact_textend {
+  margin-left: 10.9rem;
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+}
+.contact_map {
+  margin-top: -10rem;
+  margin-left: 17rem;
+}
+
+.BUTTO {
+  padding: 1rem 3rem;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #c29d59;
+}
+
+/* responsiveness stuffs */
+@media (min-width: 360px) and (max-width: 800px) {
+  .contact2a {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-  }
-  .conte{
-    font-size: 6rem;
-    color: white;
-  }
-  .contact1
-  {
-      margin-top: 5rem;
-      font-family: 'Times New Roman', Times, serif;
-  }
-  .contact2_holder
-  {
-      background-color: white;
-  }
-  .contact2
-  {
-      color: black;
-      margin-left: 6rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-       padding: 5rem;
-  }
-  .contact2a{
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
-  }
-  .contact2b{
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
-  }
-  .contact2_text1
-  {
-    width: 15rem;
-    height: 1.5rem;
-    background-color: white;
-    padding-left: 3rem;
-    border: solid 1px black;
-    border-radius: 5px;
-  }
-  .contact2_text2
-  {
-   width: 34.4rem;
-    height: 4rem;
-    background-color: white;
-     padding-left: 3rem;
-      border: solid 1px black;
-       border-radius: 5px;
-  }
-  .encontact
-  {
-       background-image: url('mountainend.jpg');
-     width: 18rem ;
-     height: 15rem;
-  }
-  .CONTACT_container
-  {
-      margin-top: -40rem;
-      margin-left: 51rem;
-      background-color: white;
-      padding-top: 1.7rem;
-      margin-right: 9rem;
-      display: flex;
-      flex-direction: column;
-      gap:3rem;
-  }
-  .CONTACT{
-      background-color: white;
-  }
-  .contact_text1
-  {
-      padding-left: 2rem;
-  }
-  .TB3_contact
-  {
-      display: flex;
     flex-direction: column;
     gap: 1rem;
-    border-radius: 5px;
-    border-bottom: solid 2px rgb(159, 154, 154);
-    height: 10rem;
-    width: 15rem;
   }
-  .endcontact
-  {
-    background-image: url('../../public/images/mountainend.jpg');
-    width: 18rem ;
-    height: 12rem;
-    padding-left: 1rem;
-    padding-right: rem;
-    padding-top: 2rem;
+  .contact2b {
     display: flex;
     flex-direction: column;
-    gap:1rem;
+    gap: 1rem;
   }
-  .address1_contact
-  {
-      display: flex;
-      flex-direction: column;
-      color: black;
-      gap: 1rem;
+  .contact2 {
+    color: black;
+    margin-left: -2rem;
+    display: flex;
+    flex-direction: column;
   }
-  .contact_butto
-  {
-      width: 1.5rem;
-      background-color: whitesmoke;
-      border-radius: 5px;
-      border: solid 1px rgb(187, 182, 182);
-      height: 1.5rem;
+
+  .contact2_text2 {
+    width: 15rem;
+    height: 6rem;
   }
-  .contact_butto:hover
-  {
-      background-color: #C29D59;
+  .CONTACT .BUTTO {
+    width: fit-content;
   }
-  .address_text1
-  {
-      border-left: solid 2px #C29D59;
-      padding-left: 0.6rem;
-      align-items: center;
+
+  .address1_contact {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    gap: 1rem;
+    margin-left: -8rem;
+    box-shadow: 0 0 10px rgba(87, 86, 86, 0.5);
+    width: 18rem;
   }
-  .contact_textend
-  {
-      margin-left:10.9rem;
-      margin-top: 10rem;
+
+  .CONTACT_container {
+    margin-top: -1rem;
+    margin-left: 2rem;
+    background-color: white;
+    padding-top: 1.7rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
   }
-  .contact_map
-  {
-      margin-top: -10rem;
-      margin-left: 17rem;
+  .contact_map {
+    margin-top: 5rem;
+    margin-left: 0rem;
+    width: 3rem;
   }
-  
-  
-  
-  .BUTTO{
-    padding: 1rem 3rem;
-    outline: none;
-    border: none;
-    border-radius: .5rem;
-    background-color: #C29D59;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contact2a {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: white;
+    gap: 1rem;
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  .contact2b {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .contact2 {
+    color: black;
+    margin-left: -2rem;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .contact2_text2 {
+    width: 33rem;
+    height: 6rem;
+  }
+  .CONTACT .BUTTO {
+    width: fit-content;
+    padding: 1rem 5rem;
+    font-size: 2rem;
+  }
+
+  .address1_contact {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    gap: 1rem;
+    margin-left: -8rem;
+    box-shadow: 0 0 10px rgba(87, 86, 86, 0.5);
+    width: 18rem;
+  }
+
+  .CONTACT_container {
+    margin-top: -1rem;
+    margin-left: 2rem;
+    background-color: white;
+    padding-top: 1.7rem;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .endcontact,
+  .TB3_contact {
+    height: fit-content;
+    padding: 1rem;
+    width: fit-content;
+  }
+  .contact_textend {
+    margin: auto;
+    margin-left: 8rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .address1_contact {
+    padding: 2rem;
+    font-size: 2rem;
+    width: fit-content;
+  }
+  .contact_map {
+    margin-top: 9rem;
+    width: 3rem;
+    margin: auto;
+    margin-left: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,93 @@
+.newTourOverlay {
+  position: absolute;
+  margin-top: 12rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  padding-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.newtourModal {
+  background: white;
+  border: 1px solid grey;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.btnns {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  gap: 2;
+}
+
+.closeButton {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-left: 3rem;
+  border-radius: 5px;
+}
+.addButton {
+  background-color: #c29d59;
+  color: white;
+  width: 10rem;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.newtourcont {
+  width: 40rem;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.tourField {
+  margin-bottom: 20px;
+}
+
+.tourField label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.tourField input[type="text"],
+.tourField select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.tourField select {
+  cursor: pointer;
+}
+
+.tourField input[type="file"] {
+  width: calc(100% - 20px);
+  margin-top: 5px;
+}
+.combine1 {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+}
+#inputtourd {
+  width: 45%;
+}

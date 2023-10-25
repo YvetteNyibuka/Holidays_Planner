@@ -17,9 +17,9 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     width: 400px;
     z-index: 10000;
-   background-color: white;
-   border-radius: 5px;
-   text-align: start;
+    background-color: white;
+    border-radius: 5px;
+    text-align: start;
   }
   .edit-header{
     display: flex;

@@ -1,26 +1,26 @@
-.dashtourContt{
-    /* background-color: red; */
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 60rem;
-    margin: auto;
-    text-align: center;
-    height:fit-content; 
-    width: 95%;
-    margin-top: 7rem;
+.dashtourContt {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90rem;
+  margin: auto;
+  text-align: center;
+  height: fit-content;
+  width: 95%;
+  margin-top: 7rem;
 }
-.dashtourheaderr{
-    width: 80%;
-    margin-top: -58rem;
-    background-color: white;
-    display: flex;
-    position: fixed;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+.dashtourheaderr {
+  width: 80%;
+  /* margin-top: -80rem; */
+  background-color: red;
+  display: flex;
+  /* position: fixed; */
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
-.titleeeee{
+.titleeeee {
   width: 45%;
   /* background-color: #f44336; */
   margin: auto;
@@ -28,73 +28,73 @@
   justify-content: center;
   align-items: center;
 }
-.buttonnnnn{
+.buttonnnnn {
   width: 45%;
   /* background-color: crimson; */
 }
-.newTour{
-    background-color: #C29D59;
-    color: white;
-    border: none;
-    padding: 1rem ;
-    text-align: center;
-    margin-top: 1rem;
-    width: 35%;
-    margin-left: 60%;
-    margin-bottom: 1rem;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    border-radius: 5px;
+.newTour {
+  background-color: #c29d59;
+  color: white;
+  border: none;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+  width: 35%;
+  margin-left: 60%;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 5px;
 }
 
 /* DashTours.css */
 .tourTable {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .tourTable th, .tourTable td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
 
-  
-  .tourTable th {
-    background-color: #f2f2f2;
-  }
-  
-  .tourTable img {
-    width: 50px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  
-  .tourTable .action {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .editt, .deletee {
-    background-color: #C29D59;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    margin-top: 1rem;
-    width: 7rem;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    border-radius: 5px;
-  }
-  
-  .deletee {
-    background-color: #f44336;
-  }
-  
+.tourTable th,
+.tourTable td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tourTable th {
+  background-color: #f2f2f2;
+}
+
+.tourTable img {
+  width: 50px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.tourTable .action {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.editt,
+.deletee {
+  background-color: #c29d59;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  margin-top: 1rem;
+  width: 7rem;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.deletee {
+  background-color: #f44336;
+}

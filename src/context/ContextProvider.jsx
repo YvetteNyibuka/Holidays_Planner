@@ -5,14 +5,13 @@ import { createContext, useContext } from "react";
 const StateContext = createContext();
 
 export const ContextProvider = ({ children }) => {
-
   let user = JSON.parse(localStorage.getItem("info"));
   let token = user.access_token;
   let userData = user?.user;
-  console.log(userData);
+  // console.log(userData);
 
   let url = "https://holiday-planner-4lnj.onrender.com/api/v1/";
-  const { data: fetchUsersData} = useQuery({
+  const { data: fetchUsersData } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
       const res = await axios.get(url + "auth/users/", {
@@ -24,7 +23,7 @@ export const ContextProvider = ({ children }) => {
     },
     onSuccess: (data) => {
       console.log(res.data);
-    }
+    },
   });
 
   const { data: loggedUser } = useQuery({
@@ -74,21 +73,37 @@ export const ContextProvider = ({ children }) => {
     },
   });
 
-const { data: SingleUSer, isLoading: SingleUserLoading } = useQuery({
-  queryKey: ["user"], // Pass email as part of the queryKey
-  queryFn: async (email) => {
-    const res = await axios.get(
-      url + `auth/users/getOne?fieldName=email&value=${email}`,
-    );
-console.log(res);
-    return res.data;
-  },
-});
-
-
-
+  const { data: SingleUSer, isLoading: SingleUserLoading } = useQuery({
+    queryKey: ["user"], // Pass email as part of the queryKey
+    queryFn: async (email) => {
+      const res = await axios.get(
+        url + `auth/users/getOne?fieldName=email&value=${email}`
+      );
+      console.log(res);
+      return res.data;
+    },
+  });
 
   //   tours transactions
+
+  //create tour mutation
+
+  // const tourMutation = useMutation({
+  //   mutationFn: async (tour) => {
+  //     const newTour = await axios.post(
+  //       "https://holiday-planner-4lnj.onrender.com/api/v1/tour/create",
+  //       tour
+  //     );
+  //     return newTour.tour;
+  //   },
+  //   onError: (error) => {
+  //     console.error("Mutation error=============:", error);
+  //   },
+  //   onSuccess: (tour) => {
+  //     alert("Tour created successfully:", tour);
+  //   },
+  // });
+
   const { data: DashTours, isLoading: ToursLoading } = useQuery({
     queryKey: ["tours"],
     queryFn: async () => {
@@ -112,7 +127,8 @@ console.log(res);
         DashTours,
         ToursLoading,
         SingleUserLoading,
-        SingleUSer
+        SingleUSer,
+        // tourMutation,
       }}
     >
       {children}

@@ -68,7 +68,7 @@ const DashSidebar = () => {
             />
           </div>
           <div className="namees">
-            <h3>{loggedUser?.email}</h3>
+            <h3>{loggedUser?.fullName}</h3>
             <p>{loggedUser?.role}</p>
           </div>
         </div>
@@ -94,7 +94,7 @@ const DashSidebar = () => {
       <div className="dashHeadercont">
         <div className="greetUser">
           <div className="helllo">
-            <h2>Hello, {loggedUser?.email}</h2>
+            <h2>Hello, {loggedUser?.fullName}</h2>
           </div>
           <div className="settings">
             <SlSettings />

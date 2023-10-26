@@ -86,34 +86,17 @@ export const ContextProvider = ({ children }) => {
 
   //   tours transactions
 
-  //create tour mutation
-
-  // const tourMutation = useMutation({
-  //   mutationFn: async (tour) => {
-  //     const newTour = await axios.post(
-  //       "https://holiday-planner-4lnj.onrender.com/api/v1/tour/create",
-  //       tour
-  //     );
-  //     return newTour.tour;
-  //   },
-  //   onError: (error) => {
-  //     console.error("Mutation error=============:", error);
-  //   },
-  //   onSuccess: (tour) => {
-  //     alert("Tour created successfully:", tour);
-  //   },
-  // });
-
   const { data: DashTours, isLoading: ToursLoading } = useQuery({
     queryKey: ["tours"],
     queryFn: async () => {
       const res = await axios.get(
         "https://holiday-planner-4lnj.onrender.com/api/v1/tour/"
       );
+      console.log(res)
       return res.data;
     },
     onSuccess: (data) => {
-      console.log(data);
+      console.log(res.data);
     },
   });
 

@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 90rem;
+  margin-top: 100rem;
   margin: auto;
   text-align: center;
   height: fit-content;
@@ -15,11 +15,11 @@
   width: 80%;
   /* top: -200rem; */
   height: fit-content;
-  margin-top: -173rem;
+  margin-top: -5rem;
   margin-left: 0;
   background-color: white;
   display: flex;
-  position: fixed;
+  position: relative;
   justify-content: space-between;
   margin-bottom: 1rem;
 }

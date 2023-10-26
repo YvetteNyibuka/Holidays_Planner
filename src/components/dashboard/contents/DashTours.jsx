@@ -3,6 +3,8 @@ import "../../../styles/DashTours.css";
 import { usestatecontext } from "../../../context/ContextProvider";
 import NewTours from "./NewTours.jsx";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import axios from "axios";
+import Notiflix from "notiflix";
 
 const DashTours = () => {
   const { DashTours, ToursLoading } = usestatecontext();
@@ -10,7 +12,7 @@ const DashTours = () => {
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [tourToDelete, setTourToDelete] = useState(null);
 
-  const handleConfirmDelete = async () => {
+  const handleConfirmDelete = async (id) => {
     let user = JSON.parse(localStorage.getItem("info"));
     let token = user.access_token;
     // let userData = user?.user;
@@ -22,7 +24,7 @@ const DashTours = () => {
         "No",
         async () => {
           const res = await axios.delete(
-            `https://holiday-planner-4lnj.onrender.com/api/v1/tour/delete/${tourToDelete._id}`,
+            `https://holiday-planner-4lnj.onrender.com/api/v1/tour/delete/${id}`,
             {
               headers: {
                 Authorization: "Bearer" + token,
@@ -96,7 +98,7 @@ const DashTours = () => {
                 <img
                   src={tour.backdropImage}
                   alt=""
-                  style={{ width: "10rem", height: "10rem" }}
+                  style={{ width: "5rem", height: "3rem" }}
                 />
               </td>
               <td>{tour.Title}</td>
@@ -109,8 +111,11 @@ const DashTours = () => {
                   <button className="editt">
                     <FaEdit />
                   </button>
-                  <button className="deletee" onClick={handleDeleteClick}>
-                    <FaTrash/>
+                  <button
+                    className="deletee"
+                    onClick={() => handleConfirmDelete(tour._id)}
+                  >
+                    <FaTrash />
                   </button>
                 </div>
               </td>

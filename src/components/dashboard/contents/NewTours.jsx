@@ -3,6 +3,7 @@ import "../../../styles/NewTour.css";
 import axios from "axios";
 // import { usestatecontext } from "../../../context/ContextProvider";
 import { useForm } from "react-hook-form";
+import Notiflix from "notiflix";
 
 const NewTours = ({ onClose }) => {
   const onsubmit = async (tour) => {
@@ -25,22 +26,26 @@ const NewTours = ({ onClose }) => {
     form.append("backdropImage", tour.image[0]);
     form.append("Gallery", tour.gallely[0]);
 
-    try {
-      const res = await axios.post(
-        "https://holiday-planner-4lnj.onrender.com/api/v1/tour/create",
-        form,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-      if (res.data) {
-        console.log("Tour created", res.data);
+  try {
+    const res = await axios.post(
+      "https://holiday-planner-4lnj.onrender.com/api/v1/tour/create",
+      form,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       }
-    } catch (error) {
-      // console.error("Error fetching data:", error);
+    );
+    if (res.data) {
+      Notiflix.Notify.success("Tour created successfully");
+      console.log("Tour created", res.data);
+      onClose();
     }
+  } catch (error) {
+    // Handle error if the tour creation fails
+    Notiflix.Notify.failure("Tour creation failed")
+    console.error("Error creating tour:", error);
+  }
   };
 
   const {

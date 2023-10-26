@@ -85,7 +85,7 @@ const DashTours = () => {
             <th>Title</th>
             <th>Description</th>
             <th>Duration</th>
-            <th>Group size</th>
+            <th>Group Size</th>
             <th>Price</th>
             <th>Actions</th>
           </tr>
@@ -106,18 +106,16 @@ const DashTours = () => {
               <td>{tour.Duration}</td>
               <td>{tour.GroupSize}</td>
               <td>{tour.Price}</td>
-              <td>
-                <div className="action">
-                  <button className="editt">
-                    <FaEdit />
-                  </button>
-                  <button
-                    className="deletee"
-                    onClick={() => handleConfirmDelete(tour._id)}
-                  >
-                    <FaTrash />
-                  </button>
-                </div>
+              <td class="actions">
+                <button class="editt">
+                  <FaEdit />
+                </button>
+                <button
+                  onClick={() => handleConfirmDelete(tour._id)}
+                  class="deletee"
+                >
+                  <FaTrash />
+                </button>
               </td>
             </tr>
           ))}

@@ -5,6 +5,8 @@ import Edituser from "./Edituser";
 import { usestatecontext } from "../../../context/ContextProvider";
 import axios from "axios";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import {MdOutlineArrowForwardIos} from "react-icons/md"
+import {GrPrevious} from "react-icons/gr";
 
 const Users = () => {
   let url = "https://holiday-planner-4lnj.onrender.com/api/v1/";
@@ -144,14 +146,14 @@ const firstUserIdOnCurrentPage = (currentPage - 1) * usersPerPage + 1;
           onClick={() => paginate(currentPage - 1)}
           disabled={currentPage === 1}
         >
-          Previous
+          <GrPrevious />
         </button>
         <span className="page-number">Page {currentPage}</span>
         <button
           onClick={() => paginate(currentPage + 1)}
           disabled={currentPage === totalPages}
         >
-          Next
+          <MdOutlineArrowForwardIos />
         </button>
       </div>
     </div>

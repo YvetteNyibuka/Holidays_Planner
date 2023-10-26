@@ -25,10 +25,10 @@ const TourDetail = () => {
       }
     }
 
-    fetchData(); // Immediately invoke the async function
+    fetchData(); 
 
-    // You don't need to return anything from useEffect
-  }, [id]); // Include id in the dependency array to re-run the effect when id changes
+
+  }, [id]); 
 
   console.log(tourr);
   const handleIsCheck = () => {

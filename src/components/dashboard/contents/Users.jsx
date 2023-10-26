@@ -7,16 +7,32 @@ import axios from "axios";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 const Users = () => {
-  const { fetchUsersData = [] } = usestatecontext();
-  const { SingleUSer } = usestatecontext();
-
   let url = "https://holiday-planner-4lnj.onrender.com/api/v1/";
   let user = JSON.parse(localStorage.getItem("info"));
   let token = user.access_token;
 
+  const { fetchUsersData = [] } = usestatecontext();
+  const { SingleUSer } = usestatecontext();
   const [isEditModalOpen, setEditModalOpen] = useState(false);
   const [isCreateModalOpen, setCreateModalOpen] = useState(false);
   const [emailToEdit, setEmailToEdit] = useState(null);
+
+  const usersPerPage = 10;
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const indexOfLastUser = currentPage * usersPerPage;
+  const indexOfFirstUser = indexOfLastUser - usersPerPage;
+  const currentUsers = fetchUsersData.slice(indexOfFirstUser, indexOfLastUser);
+
+  const totalPages = Math.ceil(fetchUsersData.length / usersPerPage);
+
+  // Update page number
+  const paginate = (newPage) => {
+    if (newPage >= 1 && newPage <= totalPages) {
+      setCurrentPage(newPage);
+    }
+  };
+const firstUserIdOnCurrentPage = (currentPage - 1) * usersPerPage + 1;
 
   const handleEditClick = () => {
     setEditModalOpen((prevIsEditModal) => !prevIsEditModal);
@@ -88,17 +104,17 @@ const Users = () => {
             <tr>
               <th>ID</th>
               <th>Role</th>
+              <th>Names</th>
               <th>Email</th>
-              <th>Password</th>
-              <th>Actions</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            {fetchUsersData.map((User, index) => (
+            {currentUsers.map((User, index) => (
               <tr key={index}>
-                <td>{(i += 1)}</td>
+                <td>{firstUserIdOnCurrentPage + index}</td>
                 <td>{User.role}</td>
-                <td>{User.fullName}</td>
+                <td>{User?.fullName ? User?.fullName : "Not identified"}</td>
                 <td>{User.email}</td>
                 <td>
                   <div className="actionn">
@@ -121,6 +137,22 @@ const Users = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      {/* Pagination */}
+      <div className="pagination">
+        <button
+          onClick={() => paginate(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+        <span className="page-number">Page {currentPage}</span>
+        <button
+          onClick={() => paginate(currentPage + 1)}
+          disabled={currentPage === totalPages}
+        >
+          Next
+        </button>
       </div>
     </div>
   );

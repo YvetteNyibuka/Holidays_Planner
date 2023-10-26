@@ -54,20 +54,20 @@ const TourList = () => {
               <button className="countryy">{tour.Title}</button>
               <div className="tourDetaill">
                 <h3>{tour.Title}</h3> <br />
-                <p>{tour.description}</p>
+                <p>{tour.Description}</p>
               </div>
               <div className="tourInstructionss">
                 <div className="duration">
                   <h4>Duration</h4>
-                  <p>3 days</p>
+                  <p>{tour.Duration} days</p>
                 </div>
                 <div className="size">
                   <h4>Group size</h4>
-                  <p>{tour.GroupSize}</p>
+                  <p>{tour.GroupSize} People</p>
                 </div>
               </div>
               <div className="bookk">
-                <p>600</p>
+                <p>${tour.Price}</p>
                 <button
                   className="bookBtnn"
                   onClick={() => handleNavigatee(tour?._id)}

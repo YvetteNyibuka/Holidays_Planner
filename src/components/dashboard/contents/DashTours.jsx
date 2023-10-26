@@ -18,8 +18,8 @@ const DashTours = () => {
     // let userData = user?.user;
     try {
       Notiflix.Confirm.show(
-        "Confirm delete tour",
-        "Do you agree with me?",
+        "Confirm",
+        "Are you sure you want to delete this tour?",
         "Yes",
         "No",
         async () => {

@@ -1,10 +1,11 @@
 .newTourOverlay {
   position: absolute;
   margin-top: 12rem;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: -1rem;
+  left: 25rem;
+  width: 50%;
   height: fit-content;
+  background-color: rgba(0, 0, 0, 0.5);
   padding-bottom: 4rem;
   display: flex;
   justify-content: center;
@@ -13,17 +14,11 @@
 }
 .newtourModal {
   background: white;
+  margin-top: 3rem;
   border: 1px solid grey;
   padding-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.btnns {
-  display: flex;
-  margin: auto;
-  align-items: center;
-  justify-content: center;
-  gap: 2;
 }
 
 .closeButton {
@@ -33,7 +28,7 @@
   padding: 10px 20px;
   margin-top: 10px;
   cursor: pointer;
-  margin-left: 3rem;
+  margin-left: 20rem;
   border-radius: 5px;
 }
 .addButton {

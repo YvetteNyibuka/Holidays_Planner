@@ -52,6 +52,9 @@ const NewTours = ({ onClose }) => {
   return (
     <div className="newTourOverlay">
       <div className="newtourModal">
+        <button className="closeButton" onClick={onClose}>
+          X
+        </button>
         <div className="newtourcont">
           <div className="tourheader">
             <div className="tourtitle">
@@ -248,11 +251,6 @@ const NewTours = ({ onClose }) => {
               </form>
             </div>
           </div>
-        </div>
-        <div className="btnns">
-          <button className="closeButton" onClick={onClose}>
-            CANCEL
-          </button>
         </div>
       </div>
     </div>

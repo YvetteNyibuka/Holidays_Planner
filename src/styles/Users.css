@@ -9,8 +9,8 @@
 }
 
 .dashuserheader {
-  position: fixed;
-  top: 3rem;
+  /* position: fixed; */
+  margin-top: 3rem;
   height: 3rem;
   justify-content: space-between;
   display: flex;
@@ -73,7 +73,7 @@
   background-color: #f2f2f2;
   font-weight: bold;
   color: #333;
-  position: sticky;
+  /* position: sticky; */
   top: 7rem;
   /* z-index: 2; */
 }
@@ -108,7 +108,7 @@
 }
 
 .pagination button {
-  background-color:#C29D59;
+  background-color: #c29d59;
   color: white;
   border: none;
   width: 7rem;

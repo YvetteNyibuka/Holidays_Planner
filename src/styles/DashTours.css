@@ -75,6 +75,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  box-shadow: lightgray 2px 2px 5px 5px;
 }
 
 th,
@@ -102,4 +103,6 @@ tr:hover {
   height: 3rem;
   border-bottom: none;
 }
-
+tr:nth-child(odd) {
+  background-color: lightgray;
+}

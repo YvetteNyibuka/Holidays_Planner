@@ -59,7 +59,7 @@ function Edituser({ onClose, onSave, handleEditClick, emailToEdit }) {
             <div className="form-group">
               <label>Username:</label>
               <input type="text"
-              name="name"
+              name="names"
               value={data.name}
               onChange={handleData}
                />

@@ -1,12 +1,24 @@
-.dashquerryCont{
-    /* background-color: lightblue; */
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    text-align: center;
-    height:100vh; 
-    width: 95%;
-    margin-top: 7rem;
+.dashquerryCont {
+  /* background-color: red; */
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding-top: 12rem;
+  text-align: center;
+  height: 80vh;
+  width: 77%;
+  margin-top: 7rem;
+}
+#tittle {
+  margin: 2rem;
+}
+.reply {
+  background-color: #c29d59;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  color: white;
 }

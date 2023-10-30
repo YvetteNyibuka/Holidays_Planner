@@ -1,11 +1,12 @@
-.dashusercont {
-  background-color: white;
+.dashusercontt {
+  /* background-color: red; */
   text-align: center;
-  width: 100%;
+  width: 96%;
   margin-top: 6rem;
-  padding-left: 1rem;
+  position: relative;
+  /* padding-left: 1rem; */
   padding-top: 2rem;
-  overflow-x: normal;
+  /* overflow-x: normal; */
 }
 
 .dashuserheader {

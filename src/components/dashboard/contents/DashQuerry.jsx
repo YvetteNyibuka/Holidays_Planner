@@ -12,7 +12,7 @@ if(messageLoading){
   return (
     <div className="dashquerryCont">
       <div className="dashtourheader">
-        <h1>Received Messages</h1>
+        <h1 id='tittle'>Received Messages</h1>
       </div>
       <table>
         <thead>
@@ -37,7 +37,7 @@ if(messageLoading){
               <td>{querry.message}</td>
               <td>
                 <div className="action">
-                  <button className="deletee">REPLY</button>
+                  <button className="reply">REPLY</button>
                 </div>
               </td>
             </tr>

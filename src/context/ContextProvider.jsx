@@ -72,6 +72,22 @@ export const ContextProvider = ({ children }) => {
       window.href = "/login";
     },
   });
+  const messageMutation = useMutation({
+    mutationFn: async (data) => {
+      const newMessage = await axios.post(
+        "https://holiday-planner-4lnj.onrender.com/api/v1/contact/submit",
+        data
+      );
+      return newMessage.data;
+    },
+    onSuccess: (data) => {
+      console.log(data);
+      alert("Message sent successfully");
+      window.href = "/";
+    },
+  });
+
+
 
   const { data: SingleUSer, isLoading: SingleUserLoading } = useQuery({
     queryKey: ["user"], // Pass email as part of the queryKey
@@ -92,11 +108,22 @@ export const ContextProvider = ({ children }) => {
       const res = await axios.get(
         "https://holiday-planner-4lnj.onrender.com/api/v1/tour/"
       );
-      console.log(res)
       return res.data;
     },
     onSuccess: (data) => {
-      console.log(res.data);
+      console.log(data);
+    },
+  });
+  const { data: Messages, isLoading: messageLoading } = useQuery({
+    queryKey: ["messages"],
+    queryFn: async () => {
+      const res = await axios.get(
+        "https://holiday-planner-4lnj.onrender.com/api/v1/contact/"
+      );
+      return res.data;
+    },
+    onSuccess: (data) => {
+      console.log(data);
     },
   });
 
@@ -107,10 +134,13 @@ export const ContextProvider = ({ children }) => {
         loggedUser,
         loginMutation,
         signupMutation,
+        messageMutation,
         DashTours,
         ToursLoading,
         SingleUserLoading,
         SingleUSer,
+        Messages,
+        messageLoading,
         // tourMutation,
       }}
     >

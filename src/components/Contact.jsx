@@ -1,6 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Contact.css";
+import axios from "axios";
+import { usestatecontext } from "../context/ContextProvider";
+
 export default function Contact() {
+  const {messageMutation} = usestatecontext();
+
+  const [ContactMessage, setContactMessage] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    services: "",
+    message: "",
+  });
+
+  const handleMessage = async (e) => {
+    e.preventDefault();
+
+    messageMutation.mutate(ContactMessage);
+  
+  };
+  console.log(messageMutation)
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setContactMessage({ ...ContactMessage, [name]: value });
+  };
+
   return (
     <div className="CONTACT">
       <section className="contact_back">
@@ -11,52 +37,64 @@ export default function Contact() {
         </div>
       </section>
       <section className="contact2_holder">
-        <div className="contact2">
-          <div className="contact2a">
-            <div>
-              <input
-                type="text"
-                placeholder="Full Name*"
-                className="contact2_text1"
-              />
+        <form action="" onSubmit={handleMessage}>
+          <div className="contact2">
+            <div className="contact2a">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Full Name*"
+                  className="contact2_text1"
+                  name="names"
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Email*"
+                  className="contact2_text1"
+                  name="email"
+                  onChange={handleInputChange}
+                />
+              </div>
+            </div>
+            <div className="contact2b">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Phone*"
+                  className="contact2_text1"
+                  name="phone"
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Services*"
+                  className="contact2_text1"
+                  name="service"
+                  onChange={handleInputChange}
+                />
+              </div>
             </div>
             <div>
               <input
                 type="text"
-                placeholder="Email*"
-                className="contact2_text1"
-              />
-            </div>
-          </div>
-          <div className="contact2b">
-            <div>
-              <input
-                type="text"
-                placeholder="Phone*"
-                className="contact2_text1"
+                placeholder="Message"
+                className="contact2_text2"
+                name="message"
+                onChange={handleInputChange}
               />
             </div>
             <div>
-              <input
-                type="text"
-                placeholder="Services*"
-                className="contact2_text1"
-              />
+              <button type="submit" title="submit" className="BUTTO">
+                SUBMIT
+              </button>
             </div>
           </div>
-          <div>
-            <input
-              type="text"
-              placeholder="Message"
-              className="contact2_text2"
-            />
-          </div>
-          <div>
-            <button title="submit" className="BUTTO">
-              SUBMIT
-            </button>
-          </div>
-        </div>
+        </form>
       </section>
       <section>
         <div className="CONTACT_container">

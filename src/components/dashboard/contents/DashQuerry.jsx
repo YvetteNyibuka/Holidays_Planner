@@ -1,49 +1,20 @@
 import React from 'react'
 import '../../../styles/DashQuerry.css'
+import { usestatecontext } from '../../../context/ContextProvider'
 
 const DashQuerry = () => {
-
-    const messages = [
-        {
-            id: 1,
-            fullNames: 'IZANYIBUKA Yvette',
-            email: 'izanyibukayvette@gmail.com',
-            phone: '0787615413',
-            services:'how can i book next year tool?',
-            message: 'service description',
-        },
-        {
-            id: 2,
-            fullNames: 'IZANYIBUKA Yvette',
-            email: 'izanyibukayvette@gmail.com',
-            phone: '0787615413',
-            services:'how can i book next year tool?',
-            message: 'service description',
-        },
-        {
-            id: 3,
-            fullNames: 'IZANYIBUKA Yvette',
-            email: 'izanyibukayvette@gmail.com',
-            phone: '0787615413',
-            services:'how can i book next year tool?',
-            message: 'service description',
-        },
-        {
-            id: 4,
-            fullNames: 'IZANYIBUKA Yvette',
-            email: 'izanyibukayvette@gmail.com',
-            phone: '0787615413',
-            services:'how can i book next year tool?',
-            message: 'service description',
-        },
-    ];
+const {Messages, messageLoading} = usestatecontext();
+console.log("---------------------", Messages.length)
+if(messageLoading){
+  return <div>Loading...</div>
+}
 
   return (
-    <div className='dashquerryCont'>
+    <div className="dashquerryCont">
       <div className="dashtourheader">
-<h1>Received Messages</h1>
-</div>
-        <table>
+        <h1>Received Messages</h1>
+      </div>
+      <table>
         <thead>
           <tr>
             <th>No</th>
@@ -56,7 +27,7 @@ const DashQuerry = () => {
           </tr>
         </thead>
         <tbody>
-          {messages.map((querry, index) => (
+          {Messages.map((querry, index) => (
             <tr>
               <td>{querry.id}</td>
               <td>{querry.fullNames}</td>
@@ -66,7 +37,7 @@ const DashQuerry = () => {
               <td>{querry.message}</td>
               <td>
                 <div className="action">
-                  <button className='deletee'>DELETE</button>
+                  <button className="deletee">DELETE</button>
                 </div>
               </td>
             </tr>
@@ -74,7 +45,7 @@ const DashQuerry = () => {
         </tbody>
       </table>
     </div>
-  )
+  );
 }
 
 export default DashQuerry

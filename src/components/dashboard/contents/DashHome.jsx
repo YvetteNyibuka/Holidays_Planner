@@ -1,13 +1,17 @@
-import React from 'react'
-import Example from '../../../Linechart'
+import React from "react";
+import "../../../styles/DashHome.css";
 
 const DashHome = () => {
   return (
-    <div style={{backgroundColor:'white', display:'flex', justifyContent:'center', margin:'auto', alignItems:'center', textAlign:'center', height:'100vh', width:'100%'}}>
-      Overall statistics
-      <Example />
+    <div className="dashHomeCont">
+      <div className="counts">
+        <div className="tourCount" id="counts"></div>
+        <div className="usersCount" id="counts"></div>
+        <div className="queryCount"id="counts"></div>
+      </div>
+      <div className="graphs">Hey</div>
     </div>
-  )
-}
+  );
+};
 
-export default DashHome
+export default DashHome;

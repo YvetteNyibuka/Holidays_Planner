@@ -8,7 +8,7 @@ const {Messages, messageLoading} = usestatecontext();
 if(messageLoading){
   return <div>Loading...</div>
 }
-
+ let i =0;
   return (
     <div className="dashquerryCont">
       <div className="dashtourheader">
@@ -18,7 +18,7 @@ if(messageLoading){
         <thead>
           <tr>
             <th>No</th>
-            <th>Names</th>
+            {/* <th>Names</th> */}
             <th>Email</th>
             <th>Phone</th>
             <th>Service</th>
@@ -29,8 +29,8 @@ if(messageLoading){
         <tbody>
           {Messages.map((querry, index) => (
             <tr>
-              <td>{querry.id}</td>
-              <td>{querry.fullNames}</td>
+              <td>{i+=1}</td>
+              {/* <td>{querry.fullNames}</td> */}
               <td>{querry.email}</td>
               <td>{querry.phone}</td>
               <td>{querry.services}</td>

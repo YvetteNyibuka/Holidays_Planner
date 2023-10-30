@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../../../styles/DashTours.css";
 import { usestatecontext } from "../../../context/ContextProvider";
 import NewTours from "./NewTours.jsx";
+import UpdateTour from "./UpdateTour";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import axios from "axios";
 import Notiflix from "notiflix";
@@ -9,6 +10,7 @@ import Notiflix from "notiflix";
 const DashTours = () => {
   const { DashTours, ToursLoading } = usestatecontext();
   const [isCreateTourOpen, setCreateTour] = useState(false);
+  const [isUpdateTourOpen, setUpdateTour] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [tourToDelete, setTourToDelete] = useState(null);
 
@@ -52,6 +54,17 @@ const DashTours = () => {
     setShowDeleteConfirm(false);
   };
   ///////////////////////////////////////////////
+
+
+
+  const handleUpdateTour = (tour)=>{
+    setUpdateTour(true);
+      localStorage.setItem("selectedTour1", JSON.stringify(tour));
+
+  }
+  const handlecloseUpdate= ()=>{
+    setUpdateTour(false);
+  }
   const handleCreateTour = () => {
     setCreateTour(true);
   };
@@ -103,11 +116,11 @@ const DashTours = () => {
               </td>
               <td>{tour.Title}</td>
               <td>{tour.Description}</td>
-              <td>{tour.Duration}</td>
-              <td>{tour.GroupSize}</td>
-              <td>{tour.Price}</td>
+              <td>{tour.Duration} Months</td>
+              <td>{tour.GroupSize} People</td>
+              <td>${tour.Price}</td>
               <td class="actions">
-                <button class="editt">
+                <button class="editt" onClick={() => handleUpdateTour(tour)}>
                   <FaEdit />
                 </button>
                 <button
@@ -122,6 +135,7 @@ const DashTours = () => {
         </tbody>
       </table>
       {isCreateTourOpen && <NewTours onClose={handleCloseModal} />}
+      {isUpdateTourOpen && <UpdateTour onClose={handlecloseUpdate} />}
       {showDeleteConfirm && (
         <div className="popup">
           <p>Are you sure you want to delete {tourToDelete._id}?</p>

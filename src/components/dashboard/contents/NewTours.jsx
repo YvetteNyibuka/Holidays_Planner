@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../../../styles/NewTour.css";
 import axios from "axios";
-// import { usestatecontext } from "../../../context/ContextProvider";
 import { useForm } from "react-hook-form";
 import Notiflix from "notiflix";
 

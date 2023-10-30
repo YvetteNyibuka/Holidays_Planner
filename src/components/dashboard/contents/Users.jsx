@@ -5,8 +5,9 @@ import Edituser from "./Edituser";
 import { usestatecontext } from "../../../context/ContextProvider";
 import axios from "axios";
 import { FaEdit, FaTrash } from "react-icons/fa";
-import {MdOutlineArrowForwardIos} from "react-icons/md"
-import {GrPrevious} from "react-icons/gr";
+import { MdOutlineArrowForwardIos } from "react-icons/md";
+import { GrPrevious } from "react-icons/gr";
+import Notiflix from "notiflix";
 
 const Users = () => {
   let url = "https://holiday-planner-4lnj.onrender.com/api/v1/";
@@ -34,7 +35,7 @@ const Users = () => {
       setCurrentPage(newPage);
     }
   };
-const firstUserIdOnCurrentPage = (currentPage - 1) * usersPerPage + 1;
+  const firstUserIdOnCurrentPage = (currentPage - 1) * usersPerPage + 1;
 
   const handleEditClick = () => {
     setEditModalOpen((prevIsEditModal) => !prevIsEditModal);
@@ -50,22 +51,45 @@ const firstUserIdOnCurrentPage = (currentPage - 1) * usersPerPage + 1;
     setCreateModalOpen((prevIsCreateModal) => !prevIsCreateModal);
   };
 
-  const handleDeleteClick = async (email) => {
+  // const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  // const [userToDelete, setUserToDelete] = useState(null);
+
+  const handleDeleteClick = async (id) => {
     console.log(token);
-    const res = await axios.delete(url + `auth/users/delete/${email}`, {
-      headers: {
-        Authorization: "Bearer " + token,
-      },
-    });
-    const data = await res.data;
-    alert(data.message);
+    try {
+      Notiflix.Confirm.show(
+        "Confirm",
+        "Confirm delete User?",
+        "Yes",
+        "No",
+        async () => {
+          const res = await axios.delete(url + `auth/users/delete/${id}`, {
+            headers: {
+              Authorization: "Bearer " + token,
+            },
+          });
+          window.location.reload();
+          const data = await res.data;
+          alert(data.message);
+        },
+        () => {
+          alert("If you say so...");
+        },
+        () => {
+          alert("If you say so...");
+        },
+        {}
+      );
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const handleGetSingleUser = async (email) => {
-    console.log(email);
+  const handleGetSingleUser = async (id) => {
+    console.log(id);
     try {
       const res = await fetch(
-        url + `auth/users/getOne?fieldName=email&value=${email}`,
+        url + `auth/users/getOne?fieldName=email&value=${id}`,
         {
           method: "GET",
         }
@@ -129,7 +153,7 @@ const firstUserIdOnCurrentPage = (currentPage - 1) * usersPerPage + 1;
 
                     <button
                       className="delete-button"
-                      onClick={() => handleDeleteClick(User.email)}
+                      onClick={() => handleDeleteClick(User._id)}
                     >
                       <FaTrash />
                     </button>

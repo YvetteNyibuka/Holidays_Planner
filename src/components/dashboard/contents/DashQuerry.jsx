@@ -4,7 +4,7 @@ import { usestatecontext } from '../../../context/ContextProvider'
 
 const DashQuerry = () => {
 const {Messages, messageLoading} = usestatecontext();
-console.log("---------------------", Messages.length)
+
 if(messageLoading){
   return <div>Loading...</div>
 }
@@ -37,7 +37,7 @@ if(messageLoading){
               <td>{querry.message}</td>
               <td>
                 <div className="action">
-                  <button className="deletee">DELETE</button>
+                  <button className="deletee">REPLY</button>
                 </div>
               </td>
             </tr>

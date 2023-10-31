@@ -8,18 +8,16 @@
   text-align: center;
   height: fit-content;
   width: 90%;
-  margin-top: 7rem;
+  margin-top: 6rem;
 }
 .dashtourheaderr {
   width: 80%;
   height: fit-content;
-  margin-top: -3rem;
-  margin-left: 0;
+  margin: -3rem 0 0.5rem 0;
   background-color: white;
   display: flex;
   position: relative;
   justify-content: space-between;
-  margin-bottom: 1rem;
 }
 .titleeeee {
   width: 45%;

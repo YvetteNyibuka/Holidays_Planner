@@ -5,7 +5,7 @@ import { RxDashboard } from "react-icons/rx";
 import { PiAirplaneTiltBold } from "react-icons/pi";
 import { BsCalendarDate } from "react-icons/bs";
 import { GiForestCamp } from "react-icons/gi";
-import { FaUsers } from "react-icons/fa";
+import { FaUsers, FaCalendarCheck } from "react-icons/fa";
 import { SiGooglemessages } from "react-icons/si";
 import { FiLogOut } from "react-icons/fi";
 import { SlSettings } from "react-icons/sl";
@@ -45,14 +45,15 @@ const DashSidebar = () => {
     },
 
     {
+      icon: <FaCalendarCheck style={{ color: "black" }} />,
+      path: "bookings",
+      name: "Bookings",
+    },
+
+    {
       icon: <BsCalendarDate style={{ color: "black" }} />,
       path: "upcomings",
       name: "Upcomings",
-    },
-    {
-      icon: <GiForestCamp style={{ color: "black" }} />,
-      path: "camps",
-      name: "Camps",
     },
   ];
 

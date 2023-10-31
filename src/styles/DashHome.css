@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   /* padding-top: 3rem; */
-  margin: 6rem auto 0;
+  margin: 6rem auto 0 0;
   position: relative;
   justify-content: center;
   align-items: center;

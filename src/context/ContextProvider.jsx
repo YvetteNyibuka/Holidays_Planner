@@ -126,6 +126,20 @@ export const ContextProvider = ({ children }) => {
       console.log(data);
     },
   });
+  const { data: Bookings, isLoading: LoadingBookings } = useQuery({
+    queryKey: ["bookings"],
+    queryFn: async () => {
+      const res = await axios.get(
+        "https://holiday-planner-4lnj.onrender.com/api/v1/booking/view"
+      );
+      return res.data;
+    },
+    onSuccess: (data) => {
+      console.log(data);
+    },
+  });
+
+  
 
   return (
     <StateContext.Provider
@@ -141,7 +155,8 @@ export const ContextProvider = ({ children }) => {
         SingleUSer,
         Messages,
         messageLoading,
-        // tourMutation,
+        Bookings,
+        LoadingBookings,
       }}
     >
       {children}

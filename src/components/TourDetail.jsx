@@ -4,9 +4,12 @@ import destinatio from "../../public/images/destination-img2.jpg";
 import { BsCheckLg } from "react-icons/bs";
 import ToorUse from "./ToorUse";
 import { useParams } from "react-router-dom";
+import { usestatecontext } from "../context/ContextProvider";
 import axios from "axios";
 const TourDetail = () => {
   const [isCheck, setIsCheck] = useState(false);
+  const { loggedUser } = usestatecontext();
+  console.log("logged user: ", loggedUser);
 
   const { id } = useParams();
   console.log(id);
@@ -25,15 +28,24 @@ const TourDetail = () => {
       }
     }
 
-    fetchData(); 
+    fetchData();
+  }, [id]);
 
-
-  }, [id]); 
-
-  console.log(tourr);
+  console.log("=====================", tourr);
   const handleIsCheck = () => {
     setIsCheck((check) => !check);
   };
+
+  const [booktour, setbooktour] = useState({
+    bookingDate: "",
+    paymentMethod: "",
+    ticketCount: "",
+    messagee: "",
+  });
+    const handleBook = (e) => {
+    setbooktour({ ...booktour, [e.target.name]: e.target.value });
+  };
+
   return (
     <>
       <div className="details">
@@ -161,40 +173,46 @@ const TourDetail = () => {
                 <input
                   type="text"
                   className="formfield"
-                  placeholder="First Name*"
-                  name="firstName"
+                  placeholder="userId*"
+                  name="userId"
+                  value={loggedUser?._id}
                 ></input>
               </div>
               <div className="field1">
                 <input
                   type="text"
                   className="formfield"
-                  placeholder="Email*"
-                  name="firstName"
+                  placeholder="fullName*"
+                  name="fullName"
+                  value={loggedUser?.fullName}
                 ></input>
               </div>
               <div className="field1">
                 <input
                   type="text"
                   className="formfield"
-                  placeholder="Confirm Email*"
-                  name="email"
+                  placeholder="tourId*"
+                  name="tourId"
+                  value={tourr?._id}
                 ></input>
               </div>
               <div className="field1">
                 <input
                   type="text"
                   className="formfield"
-                  placeholder="Phone*"
-                  name="firstName"
+                  placeholder="toutTitle*"
+                  name="toutTitle"
+                  value={tourr?.Title}
                 ></input>
               </div>
               <div className="field1">
                 <input
-                  type="text"
+                  type="date"
                   className="formfield"
                   placeholder="mm/dd/yy*"
-                  name="firstName"
+                  name="bookingDate"
+                  value={booktour.bookingDate}
+                  onChange={handleBook}
                 ></input>
               </div>
               <div className="field1">
@@ -202,7 +220,19 @@ const TourDetail = () => {
                   type="text"
                   className="formfield"
                   placeholder="Number of Tickets*"
-                  name="firstName"
+                  name="ticketCount"
+                  value={booktour.ticketCount}
+                  onChange={handleBook}
+                ></input>
+              </div>
+              <div className="field1">
+                <input
+                  type="text"
+                  className="formfield"
+                  placeholder="Payment Method*"
+                  name="paymentMethod"
+                  value={booktour.paymentMethod}
+                  onChange={handleBook}
                 ></input>
               </div>
               <div className="field2">
@@ -210,7 +240,9 @@ const TourDetail = () => {
                   type="text"
                   className="formfield1"
                   placeholder="message*"
-                  name="firstName"
+                  name="messagee"
+                  value={booktour.messagee}
+                  onChange={handleBook}
                 ></input>
               </div>
               <div className="fields">

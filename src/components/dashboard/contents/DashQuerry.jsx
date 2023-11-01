@@ -18,7 +18,6 @@ if(messageLoading){
         <thead>
           <tr>
             <th>No</th>
-            {/* <th>Names</th> */}
             <th>Email</th>
             <th>Phone</th>
             <th>Service</th>
@@ -27,14 +26,13 @@ if(messageLoading){
           </tr>
         </thead>
         <tbody>
-          {Messages.map((querry, index) => (
+          {Messages?.map((querry, index) => (
             <tr>
               <td>{i+=1}</td>
-              {/* <td>{querry.fullNames}</td> */}
-              <td>{querry.email}</td>
-              <td>{querry.phone}</td>
-              <td>{querry.services}</td>
-              <td>{querry.message}</td>
+              <td>{querry?.email}</td>
+              <td>{querry?.phone}</td>
+              <td>{querry?.services}</td>
+              <td>{querry?.message}</td>
               <td>
                 <div className="action">
                   <button className="reply">REPLY</button>

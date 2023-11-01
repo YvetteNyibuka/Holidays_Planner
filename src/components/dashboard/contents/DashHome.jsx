@@ -2,8 +2,12 @@ import React from "react";
 import { Bar, Line, Doughnut } from "react-chartjs-2";
 import "chart.js/auto";
 import "../../../styles/DashHome.css";
+import { usestatecontext } from "../../../context/ContextProvider";
 
 const DashHome = () => {
+  const { DashTours, ToursLoading } = usestatecontext();
+  const { fetchUsersData } = usestatecontext();
+  const{Messages} = usestatecontext();
   const toursData = {
     labels: ["Tour A", "Tour B", "Tour C", "Tour D", "Tour E"],
     datasets: [
@@ -54,15 +58,15 @@ const DashHome = () => {
       <div className="counts">
         <div className="tourCount" id="counts">
           <h2>Total Tours</h2>
-          <h3>50 </h3>
+          <h3>{DashTours?.length} </h3>
         </div>
         <div className="usersCount" id="counts">
           <h2>Total Users</h2>
-          <h3>20 </h3>
+          <h3>{fetchUsersData?.length} </h3>
         </div>
         <div className="queryCount" id="counts">
           <h2>Total Queries</h2>
-          <h3>10 </h3>
+          <h3>{Messages?.length} </h3>
         </div>
       </div>
       <div className="graphs">

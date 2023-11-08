@@ -9,7 +9,7 @@ const DashQuerry = () => {
   const [pageNumber, setPageNumber] = useState(0);
 
   const queryPerPage = 10;
-  
+
   const pagesVisited = pageNumber * queryPerPage;
   let i = 0;
   const displayQueries = Messages?.slice(
@@ -20,8 +20,6 @@ const DashQuerry = () => {
       <tr key={index}>
         <td>{(i += 1)}</td>
         <td>{query?.email}</td>
-        <td>{query?.phone}</td>
-        <td>{query?.services}</td>
         <td>{query?.message}</td>
         <td>
           <div className="action">
@@ -33,9 +31,9 @@ const DashQuerry = () => {
   });
 
   const pageCount = Math.ceil(Messages?.length / queryPerPage);
-  const changePage = ({selected}) => {
+  const changePage = ({ selected }) => {
     setPageNumber(selected);
-  }
+  };
 
   if (messageLoading) {
     return <div>Loading...</div>;
@@ -51,18 +49,13 @@ const DashQuerry = () => {
           <tr>
             <th>No</th>
             <th>Email</th>
-            <th>Phone</th>
-            <th>Service</th>
             <th>Message</th>
             <th>Action</th>
           </tr>
         </thead>
-        <tbody>
-          {displayQueries}
-
-        </tbody>
+        <tbody>{displayQueries}</tbody>
       </table>
-      <ReactPaginate 
+      <ReactPaginate
         previousLabel={"Previous"}
         nextLabel={"Next"}
         pageCount={pageCount}

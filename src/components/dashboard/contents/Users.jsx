@@ -5,10 +5,9 @@ import Edituser from "./Edituser";
 import { usestatecontext } from "../../../context/ContextProvider";
 import axios from "axios";
 import { FaEdit, FaTrash } from "react-icons/fa";
-import { MdOutlineArrowForwardIos } from "react-icons/md";
-import { GrPrevious } from "react-icons/gr";
 import Notiflix from "notiflix";
 import { toast } from "react-toastify";
+import ReactPaginate from "react-paginate";
 
 const Users = () => {
   let url = "https://holiday-planner-4lnj.onrender.com/api/v1/";
@@ -16,28 +15,48 @@ const Users = () => {
   let token = user.access_token;
 
   const { fetchUsersData = [] } = usestatecontext();
-  const { SingleUSer } = usestatecontext();
   const [isEditModalOpen, setEditModalOpen] = useState(false);
   const [isCreateModalOpen, setCreateModalOpen] = useState(false);
   const [emailToEdit, setEmailToEdit] = useState(null);
+  const [pageNumber, setPageNumber] = useState(0);
 
   const usersPerPage = 10;
-  const [currentPage, setCurrentPage] = useState(1);
 
-  const indexOfLastUser = currentPage * usersPerPage;
-  const indexOfFirstUser = indexOfLastUser - usersPerPage;
-  const currentUsers = fetchUsersData.slice(indexOfFirstUser, indexOfLastUser);
+  const pagesVisited = pageNumber * usersPerPage;
+  let i = 0;
+  const displayUsers = fetchUsersData
+    ?.slice(pagesVisited, pagesVisited + usersPerPage)
+    .map((user, index) => {
+      return (
+        <tr key={index}>
+          <td>{(i += 1)}</td>
+          <td>{user.role}</td>
+          <td>{user?.fullName ? user?.fullName : "Not identified"}</td>
+          <td>
+            <div className="actionn">
+              <button
+                className="edit-button"
+                onClick={() => handleEdit2(user.email)}
+              >
+                <FaEdit />
+              </button>
 
-  const totalPages = Math.ceil(fetchUsersData.length / usersPerPage);
+              <button
+                className="delete-button"
+                onClick={() => handleDeleteClick(user._id)}
+              >
+                <FaTrash />
+              </button>
+            </div>
+          </td>
+        </tr>
+      );
+    });
 
-  // Update page number
-  const paginate = (newPage) => {
-    if (newPage >= 1 && newPage <= totalPages) {
-      setCurrentPage(newPage);
-    }
+  const pageCount = Math.ceil(fetchUsersData?.length / usersPerPage);
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
   };
-  const firstUserIdOnCurrentPage = (currentPage - 1) * usersPerPage + 1;
-
   const handleEditClick = () => {
     setEditModalOpen((prevIsEditModal) => !prevIsEditModal);
   };
@@ -51,9 +70,6 @@ const Users = () => {
   const handleCreateClick = () => {
     setCreateModalOpen((prevIsCreateModal) => !prevIsCreateModal);
   };
-
-  // const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
-  // const [userToDelete, setUserToDelete] = useState(null);
 
   const handleDeleteClick = async (id) => {
     console.log(token);
@@ -107,8 +123,6 @@ const Users = () => {
     }
   };
 
-  let i = 0;
-
   return (
     <div className="dashusercontt">
       <div className="dashuserheader">
@@ -132,54 +146,22 @@ const Users = () => {
               <th>ID</th>
               <th>Role</th>
               <th>Names</th>
-              <th>Email</th>
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
-            {currentUsers.map((User, index) => (
-              <tr key={index}>
-                <td>{firstUserIdOnCurrentPage + index}</td>
-                <td>{User.role}</td>
-                <td>{User?.fullName ? User?.fullName : "Not identified"}</td>
-                <td>{User.email}</td>
-                <td>
-                  <div className="actionn">
-                    <button
-                      className="edit-button"
-                      onClick={() => handleEdit2(User.email)}
-                    >
-                      <FaEdit />
-                    </button>
-
-                    <button
-                      className="delete-button"
-                      onClick={() => handleDeleteClick(User._id)}
-                    >
-                      <FaTrash />
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
+          <tbody>{displayUsers}</tbody>
         </table>
-      </div>
-      {/* Pagination */}
-      <div className="pagination">
-        <button
-          onClick={() => paginate(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          <GrPrevious />
-        </button>
-        <span className="page-number">Page {currentPage}</span>
-        <button
-          onClick={() => paginate(currentPage + 1)}
-          disabled={currentPage === totalPages}
-        >
-          <MdOutlineArrowForwardIos />
-        </button>
+        <ReactPaginate
+          previousLabel={"Previous"}
+          nextLabel={"Next"}
+          pageCount={pageCount}
+          onPageChange={changePage}
+          containerClassName={"paginationBttns"}
+          previousLinkClassName={"previousBttn"}
+          nextLinkClassName={"nextBttn"}
+          disabledClassName={"paginationDisabled"}
+          activeClassName={"paginationActive"}
+        />
       </div>
     </div>
   );

@@ -36,18 +36,6 @@ const DashHome = () => {
     ],
   };
 
-  // const toursData = {
-  //   labels: ["Tour A", "Tour B", "Tour C", "Tour D", "Tour E"],
-  //   datasets: [
-  //     {
-  //       label: "Tours",
-  //       data: [50, 70, 25, 18, 90],
-  //       backgroundColor: "rgba(75, 192, 192, 0.2)",
-  //       borderColor: "rgba(75, 192, 192, 1)",
-  //       borderWidth: 1,
-  //     },
-  //   ],
-  // };
 
   const usersData = {
     labels: [
@@ -83,7 +71,7 @@ const DashHome = () => {
 
   return (
     <div className="dashHomeCont">
-      <div className="countss">
+      <div className="counts">
         <div className="tourCount" id="counts">
           <h2>Total Tours</h2>
           <h3>{DashTours?.length} </h3>

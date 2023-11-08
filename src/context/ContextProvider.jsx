@@ -1,6 +1,7 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { createContext, useContext } from "react";
+import { toast } from "react-toastify";
 
 const StateContext = createContext();
 
@@ -21,9 +22,9 @@ export const ContextProvider = ({ children }) => {
       });
       return res.data;
     },
-    onSuccess: (data) => {
-      console.log(res.data);
-    },
+    // onSuccess: (data) => {
+    //   console.log(res.data);
+    // },
   });
 
   const { data: loggedUser } = useQuery({
@@ -50,8 +51,8 @@ export const ContextProvider = ({ children }) => {
       return resp.data;
     },
     onSuccess: (data) => {
-      console.log(data);
-      console.log("Successfully logged in");
+      // console.log(data);
+      toast.success("Successfully logged in");
       localStorage.setItem("info", JSON.stringify(data));
       window.location.href = "/dashboard";
     },
@@ -66,7 +67,7 @@ export const ContextProvider = ({ children }) => {
       return newUser.data;
     },
     onSuccess: (data) => {
-      console.log(data);
+      // console.log(data);
       alert("Registered successfully");
       localStorage.setItem("access_token", JSON.stringify(data));
       window.href = "/login";
@@ -81,8 +82,8 @@ export const ContextProvider = ({ children }) => {
       return newMessage.data;
     },
     onSuccess: (data) => {
-      console.log(data);
-      alert("Message sent successfully");
+      // console.log(data);
+      toast.success("Message sent successfully");
       window.href = "/";
     },
   });
@@ -95,7 +96,7 @@ export const ContextProvider = ({ children }) => {
       const res = await axios.get(
         url + `auth/users/getOne?fieldName=email&value=${email}`
       );
-      console.log(res);
+      // console.log(res);
       return res.data;
     },
   });
@@ -110,9 +111,9 @@ export const ContextProvider = ({ children }) => {
       );
       return res.data;
     },
-    onSuccess: (data) => {
-      console.log(data);
-    },
+    // onSuccess: (data) => {
+    //   console.log(data);
+    // },
   });
   const { data: Messages, isLoading: messageLoading } = useQuery({
     queryKey: ["messages"],
@@ -122,9 +123,9 @@ export const ContextProvider = ({ children }) => {
       );
       return res.data;
     },
-    onSuccess: (data) => {
-      console.log(data);
-    },
+    // onSuccess: (data) => {
+    //   console.log(data);
+    // },
   });
   const { data: Bookings, isLoading: LoadingBookings } = useQuery({
     queryKey: ["bookings"],
@@ -134,9 +135,9 @@ export const ContextProvider = ({ children }) => {
       );
       return res.data;
     },
-    onSuccess: (data) => {
-      console.log(data);
-    },
+    // onSuccess: (data) => {
+    //   console.log(data);
+    // },
   });
 
   

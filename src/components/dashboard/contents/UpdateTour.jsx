@@ -5,7 +5,7 @@ const UpdateTour = ({ onClose }) => {
   const [localData, setLocalData] = useState(
     JSON.parse(localStorage.getItem("selectedTour1"))
   );
-  console.log("setLocal", localData._id);
+  // console.log("setLocal", localData._id);
   const [formData, setFormData] = useState({
     destination: localData.destination || "",
     backdropImage: null,

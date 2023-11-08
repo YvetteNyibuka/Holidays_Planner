@@ -20,7 +20,7 @@ export default function Contact() {
     messageMutation.mutate(ContactMessage);
   
   };
-  console.log(messageMutation)
+  // console.log(messageMutation)
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

@@ -4,9 +4,23 @@ import { usestatecontext } from "../../../context/ContextProvider";
 
 const Bookings = () => {
   const { Bookings, LoadingBookings } = usestatecontext();
+  // console.log("Bookingsssssssssssss", Bookings);
   if (LoadingBookings) {
     return <div>Loading...</div>;
   }
+
+  // const formatDateTime = (dateString) => {
+  //   const options = {
+  //     year: "numeric",
+  //     month: "2-digit",
+  //     day: "2-digit",
+  //   };
+  //   const formattedDate = new Date(dateString).toLocaleDateString(
+  //     "en-US",
+  //     options
+  //   );
+  //   return formattedDate;
+  // };
 
   return (
     <div className="bookingConttt">
@@ -18,21 +32,21 @@ const Bookings = () => {
         <table id="tableeeeeee">
           <thead>
             <tr>
-              <th>ID</th>
+              <th>DATE</th>
               <th>Tour ID</th>
-              <th>User ID</th>
+              <th>USER NAME</th>
               <th>Is Paid</th>
-              <th>Payment Method</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
             {Bookings.map((book, index) => (
-              <tr>
-                <td>{book._id}</td>
+              <tr key={index}>
+                <td>{book.date}</td>
                 <td>{book.tourID}</td>
-                <td>{book.userID}</td>
-                <td>{book.isPaid}</td>
-                <td>{book.paymentMethod}</td>
+                <td>{book.fullname}</td>
+                <td>{book.isPaid ? book.isPaid : "No"}</td>
+                <td>{book.status}</td>
               </tr>
             ))}
           </tbody>

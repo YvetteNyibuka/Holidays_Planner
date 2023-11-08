@@ -8,6 +8,7 @@ import { FaEdit, FaTrash } from "react-icons/fa";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { GrPrevious } from "react-icons/gr";
 import Notiflix from "notiflix";
+import { toast } from "react-toastify";
 
 const Users = () => {
   let url = "https://holiday-planner-4lnj.onrender.com/api/v1/";
@@ -70,7 +71,7 @@ const Users = () => {
           });
           window.location.reload();
           const data = await res.data;
-          alert(data.message);
+          toast.success(data.message);
         },
         () => {
           alert("If you say so...");
@@ -81,12 +82,12 @@ const Users = () => {
         {}
       );
     } catch (error) {
-      console.log(error);
+      toast.error(error);
     }
   };
 
   const handleGetSingleUser = async (id) => {
-    console.log(id);
+    // console.log(id);
     try {
       const res = await fetch(
         url + `auth/users/getOne?fieldName=email&value=${id}`,
@@ -97,12 +98,12 @@ const Users = () => {
 
       if (res.ok) {
         const data = await res.json();
-        console.log(data);
+        // console.log(data);
       } else {
-        console.error("Error fetching data");
+        toast.error("Error fetching data");
       }
     } catch (error) {
-      console.error("Error fetching data:", error);
+      toast.error("Error fetching data:", error);
     }
   };
 

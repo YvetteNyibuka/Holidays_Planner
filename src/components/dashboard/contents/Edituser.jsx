@@ -1,6 +1,7 @@
 import React, {useEffect, useState}  from "react";
 import  "../../../styles/Edituser.css"
 import axios from "axios";
+import { toast } from "react-toastify";
 
 function Edituser({ onClose, onSave, handleEditClick, emailToEdit }) {
   const [data, setData] = useState({
@@ -15,11 +16,11 @@ function Edituser({ onClose, onSave, handleEditClick, emailToEdit }) {
         `https://holiday-planner-4lnj.onrender.com/api/v1/auth/users/update/${data.email}`,
         data
       );
-      alert("User updated successfully");
+      toast.success("User updated successfully");
       onSave(); 
       onClose();
     } catch (error) {
-      console.error(error);
+      toast.error(error);
     }
   };
   
@@ -31,7 +32,7 @@ function Edituser({ onClose, onSave, handleEditClick, emailToEdit }) {
         const userData = res.data;
         setData(userData);
       } catch (error) {
-        console.error(error);
+        toast.error(error);
       }
     };
   

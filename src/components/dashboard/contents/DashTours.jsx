@@ -6,6 +6,7 @@ import UpdateTour from "./UpdateTour";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import axios from "axios";
 import Notiflix from "notiflix";
+import { toast } from "react-toastify";
 
 const DashTours = () => {
   const { DashTours, ToursLoading } = usestatecontext();
@@ -36,12 +37,12 @@ const DashTours = () => {
           window.location.reload();
         },
         () => {
-          alert("If you say so...");
+          toast.success("If you say so...");
         },
         {}
       );
     } catch (error) {
-      console.log(error);
+      toast.error(error);
     }
   };
 

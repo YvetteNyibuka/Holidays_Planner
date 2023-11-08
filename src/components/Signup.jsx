@@ -30,7 +30,7 @@ const Signup = () => {
     // }
     signupMutation.mutate(data);
   };
- console.log(signupMutation);
+//  console.log(signupMutation);
   const handleData = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };

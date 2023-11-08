@@ -3,6 +3,7 @@ import "../../../styles/NewTour.css";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import Notiflix from "notiflix";
+import { toast } from "react-toastify";
 
 const NewTours = ({ onClose }) => {
   const onsubmit = async (tour) => {
@@ -37,13 +38,13 @@ const NewTours = ({ onClose }) => {
     );
     if (res.data) {
       Notiflix.Notify.success("Tour created successfully");
-      console.log("Tour created", res.data);
+      // console.log("Tour created", res.data);
       onClose();
     }
   } catch (error) {
     // Handle error if the tour creation fails
     Notiflix.Notify.failure("Tour creation failed")
-    console.error("Error creating tour:", error);
+    toast.error( error);
   }
   };
 

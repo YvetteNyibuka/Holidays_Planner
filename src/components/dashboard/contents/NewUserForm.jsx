@@ -1,6 +1,7 @@
 import React, {useState}  from "react";
 import  "../../../styles/UserModal.css"
 import axios from "axios";
+import { toast } from "react-toastify";
 
 function Newuser({ onClose, onSave, handlecreateClick }) {
   const [data, setData] = useState({
@@ -18,7 +19,7 @@ function Newuser({ onClose, onSave, handlecreateClick }) {
       alert("Registered successfully");
       // Navigate("/login");
     } catch (error) {
-      console.log(error);
+      toast.error(error);
     }
   };
 

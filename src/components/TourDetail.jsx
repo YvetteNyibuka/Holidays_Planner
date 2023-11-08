@@ -5,6 +5,7 @@ import ToorUse from "./ToorUse";
 import { useParams } from "react-router-dom";
 import { usestatecontext } from "../context/ContextProvider";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const TourDetail = () => {
   const [isCheck, setIsCheck] = useState(false);
@@ -36,9 +37,8 @@ const TourDetail = () => {
     setIsCheck((check) => !check);
   };
 let yvette= tourr._id;
-console.log("ssssssssssssssssssssss", yvette);
   const [booktour, setbooktour] = useState({
-    bookingDate: "",
+    date: "",
     paymentMethod: "",
     ticketCount: "",
     messagee: "",
@@ -70,9 +70,13 @@ console.log("ssssssssssssssssssssss", yvette);
           },
         }
       );
-      alert("booking created");
+      toast.success("booking created",
+      {
+        theme: "colored",
+      }
+      );
     } catch (error) {
-      console.log(error);
+      toast.error(error);
     }
   };
 
@@ -173,7 +177,7 @@ console.log("ssssssssssssssssssssss", yvette);
               </div>
               <div className="flex2">
                 <p>comfortable clothing and light jacket.</p>
-              </div>
+              </div> 
             </div>
             <div className="flexes">
               <div className="flex1">
@@ -247,8 +251,8 @@ console.log("ssssssssssssssssssssss", yvette);
                   type="date"
                   className="formfield"
                   // placeholder="yy/mm/dd*"
-                  name="bookingDate"
-                  value={booktour.bookingDate}
+                  name="date"
+                  value={booktour.date}
                   onChange={handleBook}
                 ></input>
               </div>

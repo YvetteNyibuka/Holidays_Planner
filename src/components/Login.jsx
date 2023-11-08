@@ -38,7 +38,7 @@ const Login = () => {
     // }
     loginMutation.mutate(loginData);
   };
-   console.log(loginMutation);
+  //  console.log(loginMutation);
   return (
     <div className="loginContt">
       <div className="loginFormmm">

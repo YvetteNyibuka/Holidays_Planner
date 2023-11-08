@@ -10,6 +10,7 @@ import Contact from './components/Contact.jsx';
 import DashboardLayout from './components/dashboard/DashboardLayout.jsx';
 import Users from './components/dashboard/contents/Users.jsx';
 import App from './App.jsx'
+import { ToastContainer } from 'react-toastify';
 import './index.css'
 import Camps from './components/dashboard/contents/Camps.jsx';
 import DashTours from './components/dashboard/contents/DashTours.jsx';
@@ -19,6 +20,7 @@ import DashHome from './components/dashboard/contents/DashHome.jsx';
 import { ContextProvider } from './context/ContextProvider.jsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Bookings from './components/dashboard/contents/Bookings.jsx';
+import "react-toastify/dist/ReactToastify.css";
 
 const client = new QueryClient;
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -43,8 +45,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               <Route path="querries" element={<DashQuerry />} />
               <Route path="upcomings" element={<Upcomings />} />
               <Route path="bookings" element={<Bookings />} />
-             </Route>
+            </Route>
           </Routes>
+          <ToastContainer />
         </BrowserRouter>
       </ContextProvider>
     </QueryClientProvider>

@@ -1,25 +1,53 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Bar, Line, Doughnut } from "react-chartjs-2";
 import "chart.js/auto";
+import axios from "axios";
 import "../../../styles/DashHome.css";
 import { usestatecontext } from "../../../context/ContextProvider";
 
 const DashHome = () => {
   const { DashTours, ToursLoading } = usestatecontext();
   const { fetchUsersData } = usestatecontext();
-  const{Messages} = usestatecontext();
+  const { Messages } = usestatecontext();
+  const [apiData, setApiData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://holiday-planner-4lnj.onrender.com/api/v1/count?year=2023")
+      .then((response) => {
+        setApiData(response.data);
+        console.log("==================", apiData )
+      })
+      .catch((error) => {
+        console.error("Error fetching data from API:", error);
+      });
+  }, []);
+
   const toursData = {
-    labels: ["Tour A", "Tour B", "Tour C", "Tour D", "Tour E"],
+    labels: apiData.map((item) => item.label),
     datasets: [
       {
-        label: "Tours",
-        data: [50, 70, 25, 18, 90],
+        label: "Bookings",
+        data: apiData.map((item) => item.count),
         backgroundColor: "rgba(75, 192, 192, 0.2)",
         borderColor: "rgba(75, 192, 192, 1)",
         borderWidth: 1,
       },
     ],
   };
+
+  // const toursData = {
+  //   labels: ["Tour A", "Tour B", "Tour C", "Tour D", "Tour E"],
+  //   datasets: [
+  //     {
+  //       label: "Tours",
+  //       data: [50, 70, 25, 18, 90],
+  //       backgroundColor: "rgba(75, 192, 192, 0.2)",
+  //       borderColor: "rgba(75, 192, 192, 1)",
+  //       borderWidth: 1,
+  //     },
+  //   ],
+  // };
 
   const usersData = {
     labels: [
@@ -55,7 +83,7 @@ const DashHome = () => {
 
   return (
     <div className="dashHomeCont">
-      <div className="counts">
+      <div className="countss">
         <div className="tourCount" id="counts">
           <h2>Total Tours</h2>
           <h3>{DashTours?.length} </h3>

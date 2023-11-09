@@ -1,12 +1,9 @@
 .updateTourOverlay {
-  position: absolute;
-  margin-top: 0;
-  top: -1rem;
-  left: 0;
+  position: fixed;
+  inset: 0;
   width: 100%;
   height: fit-content;
   background-color: rgba(0, 0, 0, 0.5);
-  padding-bottom: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +13,9 @@
   background: white;
   margin-top: 3rem;
   border: 1px solid grey;
-  padding-bottom: 20px;
+  max-height: 90vh;
+  overflow-y: auto;
+  /* padding-bottom: 20px; */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

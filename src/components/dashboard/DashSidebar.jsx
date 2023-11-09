@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/DashSidebar.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { RxDashboard } from "react-icons/rx";
 import { PiAirplaneTiltBold } from "react-icons/pi";
 import { BsCalendarDate } from "react-icons/bs";
@@ -78,9 +78,9 @@ const DashSidebar = () => {
             {sidebarLinks.map((link, index) => (
               <li key={index} id="navLinkk">
                 {link.icon}
-                <Link id="a" to={link.path}>
+                <NavLink id="a" to={link.path}>
                   {link.name}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -103,11 +103,9 @@ const DashSidebar = () => {
         </div>
 
         <div className="displayMode">
-          <p>
-            {" "}
-            <GoSun id="disIcon" style={{ color: "yellow" }} /> Dark Mode{" "}
-            <BsMoon id="disIcon" />
-          </p>
+          {" "}
+          <GoSun id="disIcon" style={{ color: "yellow" }} /> Dark Mode{" "}
+          <BsMoon id="disIcon" />
         </div>
       </div>
     </div>

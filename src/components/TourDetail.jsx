@@ -32,53 +32,54 @@ const TourDetail = () => {
     fetchData();
   }, [id]);
 
-  console.log("=====================", tourr);
   const handleIsCheck = () => {
     setIsCheck((check) => !check);
   };
-let yvette= tourr._id;
+
+  //booking a tour
+
   const [booktour, setbooktour] = useState({
     date: "",
     paymentMethod: "",
     ticketCount: "",
     messagee: "",
-    // tourID: tourr._id,
     fullname: loggedUser.fullName,
     email: loggedUser.email,
     confirmEmail: loggedUser.email,
     phone: "07888888",
     tourID: id,
   });
+  
   const handleBook = (e) => {
     setbooktour({ ...booktour, [e.target.name]: e.target.value });
   };
 
   let user = JSON.parse(localStorage.getItem("info"));
   let token = user?.access_token;
-  // let userData = user?.user;
-  console.log(token);
-  const handlebookSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await axios.post(
-        "https://holiday-planner-4lnj.onrender.com/api/v1/booking/create",
-        booktour,
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTQxZmJjMjEzZTMyZDA3NTVjMTI2NTUiLCJpYXQiOjE2OTkzNzkzMDYsImV4cCI6MTY5OTM5MDEwNn0.joe6vA9qh7ZVduxzwV37agsgTVRBDetHmP3HS8BomyU",
-          },
-        }
-      );
-      toast.success("booking created",
+
+  // console.log("{{{{{{{{{{{{{{{{{{{{{{{{{{{{", token);
+
+const handlebookSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    await axios.post(
+      "https://holiday-planner-4lnj.onrender.com/api/v1/booking/create",
+      booktour, 
       {
-        theme: "colored",
+        headers: {
+          Authorization: "Bearer " + token,
+        },
       }
-      );
-    } catch (error) {
-      toast.error(error);
-    }
-  };
+    );
+    toast.success("Booking created", {
+      theme: "colored",
+    });
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
+
+
 
   return (
     <>
@@ -177,7 +178,7 @@ let yvette= tourr._id;
               </div>
               <div className="flex2">
                 <p>comfortable clothing and light jacket.</p>
-              </div> 
+              </div>
             </div>
             <div className="flexes">
               <div className="flex1">
@@ -297,7 +298,7 @@ let yvette= tourr._id;
                 className="buttoned"
                 onClick={handlebookSubmit}
               >
-                BOOO NOW
+                BOOK NOW
               </button>
             </form>
             <div className="call">
